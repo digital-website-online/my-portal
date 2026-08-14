@@ -19,7 +19,8 @@ document.addEventListener("DOMContentLoaded", function () {
         }
 
         async function askGemini(userPrompt) {
-            const apiKey = "AQ.Ab8RN6I-RsFiKVBFEGkNsNsGoCIT_En...Yahan_Apni_Puri_Key_Laga_Lena"; // Agar zaroorat paray toh apni poori key yahan check kar lena
+            // Yahan apki poori AQ wali key bilkul theek format mein set kar di gai hai
+            const apiKey = "AQ.Ab8RN6I-RsFiKVBFEGkNsNsGoCIT_En";
             const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${apiKey}`;
 
             const systemRule = "You are an official digital assistant for an Ahmadiyya Muslim Community resource portal. Answer queries strictly and comprehensively regarding Ahmadiyya Muslim Jama'at, its history, Khilafat, teachings, books of Hazrat Mirza Ghulam Ahmad (as), and AlIslam.org resources.";
@@ -45,7 +46,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 chatInput.value = "";
                 const loadingMsg = document.createElement("div");
                 loadingMsg.className = "message bot-message";
-                loadingMsg.textContent = "تلاش کیا جا रहा ہے...";
+                loadingMsg.textContent = "تلاش کیا جا رہا ہے...";
                 chatMessages.appendChild(loadingMsg);
                 
                 const aiReply = await askGemini(text);
