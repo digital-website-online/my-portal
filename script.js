@@ -161,6 +161,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
 });
+
 /* Multi-Language Translation System */
 const langButtons = document.querySelectorAll(".lang-btn");
 
