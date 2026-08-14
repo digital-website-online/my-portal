@@ -5,18 +5,22 @@ const sidebar = document.getElementById('sidebar');
 const overlay = document.getElementById('overlay');
 const menuLinks = document.querySelectorAll('.menu-link');
 
-openBtn.addEventListener('click', () => {
-  sidebar.classList.add('active');
-  overlay.classList.add('active');
-});
-
-function closeSidebar() {
-  sidebar.classList.remove('active');
-  overlay.classList.remove('active');
+if (openBtn && sidebar && overlay) {
+  openBtn.addEventListener('click', () => {
+    sidebar.classList.add('active');
+    overlay.classList.add('active');
+  });
 }
 
-closeBtn.addEventListener('click', closeSidebar);
-overlay.addEventListener('click', closeSidebar);
+function closeSidebar() {
+  if (sidebar && overlay) {
+    sidebar.classList.remove('active');
+    overlay.classList.remove('active');
+  }
+}
+
+if (closeBtn) closeBtn.addEventListener('click', closeSidebar);
+if (overlay) overlay.addEventListener('click', closeSidebar);
 menuLinks.forEach(link => link.addEventListener('click', closeSidebar));
 
 // B. ACCORDION FUNCTIONALITY
@@ -48,6 +52,7 @@ const searchBtn = document.getElementById('searchBtn');
 const noResults = document.getElementById('noResults');
 
 function performSearch() {
+  if (!searchInput) return;
   const query = searchInput.value.toLowerCase().trim();
   const accordionItems = document.querySelectorAll('.accordion-item');
   let visibleCount = 0;
@@ -58,7 +63,7 @@ function performSearch() {
       item.classList.remove('active');
       item.querySelector('.accordion-content').style.maxHeight = null;
     });
-    noResults.style.display = 'none';
+    if (noResults) noResults.style.display = 'none';
     return;
   }
 
@@ -78,11 +83,19 @@ function performSearch() {
     }
   });
 
-  noResults.style.display = (visibleCount === 0) ? 'block' : 'none';
-  document.getElementById('qna').scrollIntoView({ behavior: 'smooth' });
+  if (noResults) {
+    noResults.style.display = (visibleCount === 0) ? 'block' : 'none';
+  }
+  
+  const qnaSection = document.getElementById('qna');
+  if (qnaSection) {
+    qnaSection.scrollIntoView({ behavior: 'smooth' });
+  }
 }
 
-searchBtn.addEventListener('click', performSearch);
-searchInput.addEventListener('keyup', (e) => {
-  if (e.key === 'Enter') performSearch();
-});
+if (searchBtn) searchBtn.addEventListener('click', performSearch);
+if (searchInput) {
+  searchInput.addEventListener('keyup', (e) => {
+    if (e.key === 'Enter') performSearch();
+  });
+}
