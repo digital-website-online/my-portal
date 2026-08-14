@@ -21,6 +21,15 @@
             <span class="logo-bold">الاسلام</span>
             <span class="logo-sub">Resource</span>
         </div>
+
+        <!-- Professional Language Selector Bar (Resource ke niche) -->
+        <div class="lang-bar" id="langBar">
+            <button class="lang-btn active" data-lang="ur">اردو</button>
+            <button class="lang-btn" data-lang="en">English</button>
+            <button class="lang-btn" data-lang="fr">Français</button>
+            <button class="lang-btn" data-lang="bn">বাংলা</button>
+            <button class="lang-btn" data-lang="ar">العربية</button>
+        </div>
     </header>
 
     <!-- Sidebar Menu -->
@@ -137,7 +146,6 @@
         </div>
 
         <div class="accordion-container">
-
             <div class="accordion-item">
                 <div class="accordion-header">1. احمدیہ مسلم جماعت کی بنیاد کب اور کس نے رکھی؟</div>
                 <div class="accordion-content">
@@ -249,27 +257,26 @@
                     <p>احمدیہ مساجد عبادتِ الہی کے علاوہ استقبال، امن اور بھائی چارے کا مرکز ہوتی ہیں جہاں ہر امن پسند انسان کا خیر مقدم کیا جاتا ہے۔</p>
                 </div>
             </div>
-
         </div>
-
     </main>
 
-    <div class="chat-widget-btn" id="chatWidgetBtn">
-    💬
-</div>
+    <!-- Chatbot Widget -->
+    <div class="chat-widget-btn" id="chatWidgetBtn">💬</div>
 
-<div class="chat-box" id="chatBox">
-    <div class="chat-header">
-        <span>AI الاالسلام اسسٹنٹ</span>
-        <span class="close-chat" id="closeChat">&times;</span>
+    <div class="chat-box" id="chatBox">
+        <div class="chat-header">
+            <span>AI الاسلام اسسٹنٹ</span>
+            <span class="close-chat" id="closeChat">&times;</span>
+        </div>
+        <div class="chat-messages" id="chatMessages">
+            <div class="message bot-message">السلام علیکم! میں آپ کا ڈیجیٹل اسسٹنٹ ہوں۔ آپ کیا جاننا چاہتے ہیں؟</div>
+        </div>
+        <div class="chat-input-container">
+            <input type="text" id="chatInput" placeholder="اپنا سوال لکھیں...">
+            <button id="sendChatBtn">بھیجیں</button>
+        </div>
     </div>
-    <div class="chat-messages" id="chatMessages">
-        <div class="message bot-message">السلام علیکم! میں آپ کا ڈیجیٹل اسسٹنٹ ہوں۔ آپ کیا جاننا چاہتے ہیں؟</div>
-    </div>
-    <div class="chat-input-container">
-        <input type="text" id="chatInput" placeholder="اپنا سوال لکھیں...">
-        <button id="sendChatBtn">بھیجیں</button>
-    </div>
-</div>
-<script src="script.js"></script>
 
+    <script src="script.js"></script>
+</body>
+</html>
