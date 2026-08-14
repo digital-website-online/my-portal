@@ -1,16 +1,20 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Nastaliq+Urdu:wght@400;700&family=Noto+Sans+Arabic:wght@400;600;700&display=swap');
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 body {
-    background-color: #f8fafc;
+    background-color: #ffffff;
     color: #1e293b;
     direction: rtl;
     text-align: right;
+    font-family: -apple-system, BlinkMacSystemFont, "Noto Sans Arabic", "Noto Nastaliq Urdu", "Segoe UI", Roboto, sans-serif;
+    -webkit-font-smoothing: antialiased;
 }
+
 
 /* Navbar */
 .navbar {
