@@ -681,3 +681,213 @@ body {
         right: 10px;
     }
 }
+/* ==========================================
+   DARK / LIGHT THEME
+   ========================================== */
+
+html[data-theme="dark"] body {
+    background-color: #0f172a;
+    color: #e2e8f0;
+}
+
+html[data-theme="dark"] .navbar {
+    background-color: #111827;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.35);
+}
+
+html[data-theme="dark"] .logo-bold {
+    color: #4ade80;
+}
+
+html[data-theme="dark"] .logo-sub {
+    color: #facc15;
+}
+
+html[data-theme="dark"] .menu-icon span {
+    background-color: #4ade80;
+}
+
+html[data-theme="dark"] .sidebar {
+    background-color: #111827;
+    box-shadow: -4px 0 15px rgba(0, 0, 0, 0.5);
+}
+
+html[data-theme="dark"] .sidebar-header {
+    border-bottom-color: #334155;
+}
+
+html[data-theme="dark"] .sidebar-header h3 {
+    color: #4ade80;
+}
+
+html[data-theme="dark"] .close-btn {
+    color: #cbd5e1;
+}
+
+html[data-theme="dark"] .sidebar-links a {
+    color: #e2e8f0;
+}
+
+html[data-theme="dark"] .sidebar-links a:hover {
+    background-color: #1e293b;
+    color: #4ade80;
+}
+
+html[data-theme="dark"] .lang-btn {
+    color: #4ade80;
+    border-color: #4ade80;
+    background-color: transparent;
+}
+
+html[data-theme="dark"] .lang-btn:hover,
+html[data-theme="dark"] .lang-btn.active {
+    background-color: #0d5c3a;
+    color: #ffffff;
+}
+
+html[data-theme="dark"] .intro-card {
+    background-color: #111827;
+    border-color: #334155;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+html[data-theme="dark"] .bismillah,
+html[data-theme="dark"] .intro-title {
+    color: #4ade80;
+}
+
+html[data-theme="dark"] .intro-quote {
+    background-color: #162e25;
+    border-right-color: #4ade80;
+    color: #e2e8f0;
+}
+
+html[data-theme="dark"] .author-name {
+    color: #4ade80;
+}
+
+html[data-theme="dark"] .search-box input {
+    background-color: #1e293b;
+    border-color: #475569;
+    color: #f8fafc;
+}
+
+html[data-theme="dark"] .search-box input::placeholder {
+    color: #94a3b8;
+}
+
+html[data-theme="dark"] .search-box input:focus {
+    border-color: #4ade80;
+}
+
+html[data-theme="dark"] .search-box button {
+    background-color: #0d5c3a;
+}
+
+html[data-theme="dark"] .section-title h2 {
+    color: #4ade80;
+}
+
+html[data-theme="dark"] .section-title p {
+    color: #94a3b8;
+}
+
+html[data-theme="dark"] .card {
+    background-color: #111827;
+    border-color: #334155;
+    color: #e2e8f0;
+}
+
+html[data-theme="dark"] .card:hover {
+    border-color: #4ade80;
+    background-color: #1e293b;
+}
+
+html[data-theme="dark"] .card-icon {
+    background-color: #162e25;
+}
+
+html[data-theme="dark"] .card-content h3 {
+    color: #f8fafc;
+}
+
+html[data-theme="dark"] .card-content p {
+    color: #94a3b8;
+}
+
+html[data-theme="dark"] .accordion-item {
+    background-color: #111827;
+    border-color: #334155;
+}
+
+html[data-theme="dark"] .accordion-header {
+    background-color: #111827;
+    color: #e2e8f0;
+}
+
+html[data-theme="dark"] .accordion-header::after {
+    color: #4ade80;
+}
+
+html[data-theme="dark"] .accordion-content {
+    background-color: #1e293b;
+}
+
+html[data-theme="dark"] .accordion-content p {
+    color: #cbd5e1;
+    border-top-color: #334155;
+}
+
+html[data-theme="dark"] .no-results {
+    background-color: #3f1d1d;
+    color: #fca5a5;
+}
+
+html[data-theme="dark"] .chat-box {
+    background-color: #111827;
+}
+
+html[data-theme="dark"] .chat-header {
+    background-color: #0d5c3a;
+}
+
+html[data-theme="dark"] .chat-messages {
+    background-color: #0f172a;
+}
+
+html[data-theme="dark"] .bot-message {
+    background-color: #334155;
+    color: #f1f5f9;
+}
+
+html[data-theme="dark"] .user-message {
+    background-color: #0d5c3a;
+    color: #ffffff;
+}
+
+html[data-theme="dark"] .chat-input-container {
+    background-color: #111827;
+    border-top-color: #334155;
+}
+
+html[data-theme="dark"] .chat-input-container input {
+    background-color: #1e293b;
+    border-color: #475569;
+    color: #f8fafc;
+}
+
+html[data-theme="dark"] .chat-input-container input::placeholder {
+    color: #94a3b8;
+}
+
+html[data-theme="dark"] .chat-input-container input:focus {
+    border-color: #4ade80;
+}
+
+html[data-theme="dark"] .chat-input-container button {
+    background-color: #0d5c3a;
+}
+
+html[data-theme="dark"] .chat-widget-btn {
+    background-color: #0d5c3a;
+}
