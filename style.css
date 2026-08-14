@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Noto+Nastaliq+Urdu:wght@400;700&family=Noto+Sans+Arabic:wght@400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Nastaliq+Urdu:wght@400;700&display=swap');
 
 * {
     margin: 0;
@@ -11,7 +11,9 @@ body {
     color: #1e293b;
     direction: rtl;
     text-align: right;
-    font-family: -apple-system, BlinkMacSystemFont, "Noto Sans Arabic", "Noto Nastaliq Urdu", "Segoe UI", Roboto, sans-serif;
+    font-family: 'Noto Nastaliq Urdu', 'Jameel Noori Nastaliq', 'Urdu Typesetting', serif;
+    font-size: 16px;
+    line-height: 2.2; /* Nastaliq font ki lines ko aapas mein jodne se rokne ke liye */
     -webkit-font-smoothing: antialiased;
 }
 
