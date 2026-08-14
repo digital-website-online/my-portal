@@ -1,123 +1,153 @@
 <!DOCTYPE html>
 <html lang="ur" dir="rtl">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ahmadiyya Resource Portal</title>
-  
-  <!-- CSS FILE CONNECT HERE -->
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>الاسلام - Resource Portal</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <!-- BISMILLAH BAR -->
-  <div class="bismillah-bar">
-    بِسْمِ ٱللَّٰهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ
-  </div>
+    <!-- Header Section -->
+    <header class="navbar">
+        <div class="logo">
+            <span class="logo-bold">الاسلام</span>
+            <span class="logo-sub">Resource</span>
+        </div>
+        <!-- 3 Lines Menu Icon (Right Side Layout) -->
+        <div class="menu-icon" onclick="toggleSidebar()">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </header>
 
-  <!-- NAVIGATION BAR -->
-  <nav>
-    <div class="nav-container">
-      <a class="logo" href="#home">الاسلام <span>Resource</span></a>
-      <ul class="nav-links">
-        <li><a href="#home">صفحہ اول</a></li>
-        <li><a href="#resources">علمی ذخائر</a></li>
-        <li><a href="#qna">سوال و جواب (Q&A)</a></li>
-      </ul>
-      <button class="menu-btn" id="openMenu">
-        <span></span><span></span><span></span>
-      </button>
+    <!-- Sidebar (Slide Menu) -->
+    <div id="sidebar" class="sidebar">
+        <div class="sidebar-header">
+            <h3>نیویگیشن</h3>
+            <span class="close-btn" onclick="toggleSidebar()">&times;</span>
+        </div>
+        <ul class="sidebar-links">
+            <li><a href="#departments">اہم شعبہ جات</a></li>
+            <li><a href="#faqs">عام سوالات</a></li>
+            <li><a href="https://www.alislam.org/quran/" target="_blank">القرآن الکریم</a></li>
+            <li><a href="https://www.alislam.org/ruhani-khazain/" target="_blank">روحانیخزائن</a></li>
+            <li><a href="https://www.alislam.org/khilafat/" target="_blank">خلافتِ احمدیہ</a></li>
+            <li><a href="https://www.mta.tv" target="_blank">ایم ٹی اے (MTA Live)</a></li>
+            <li><a href="https://www.alislam.org/library/" target="_blank">کتب خانہ (Library)</a></li>
+            <li><a href="https://www.alislam.org/askmadhur/" target="_blank">سوال و جواب (Q&A)</a></li>
+            <li><a href="https://www.alislam.org/press-release/" target="_blank">پریس ریلیز</a></li>
+            <li><a href="https://www.alislam.org/contactus/" target="_blank">ہم سے رابطہ کریں</a></li>
+        </ul>
     </div>
-  </nav>
 
-  <!-- SIDEBAR -->
-  <div class="sidebar-overlay" id="overlay"></div>
-  <div class="sidebar" id="sidebar">
-    <div class="sidebar-header">
-      <div class="logo">الاسلام <span>Menu</span></div>
-      <button class="close-btn" id="closeMenu">&times;</button>
-    </div>
-    <ul class="sidebar-menu">
-      <li><a href="#home" class="menu-link">صفحہ اول</a></li>
-      <li><a href="#resources" class="menu-link">علمی ذخائر</a></li>
-      <li><a href="#qna" class="menu-link">سوال و جواب (Q&A)</a></li>
-    </ul>
-  </div>
+    <!-- Overlay Background for Menu -->
+    <div id="overlay" class="overlay" onclick="toggleSidebar()"></div>
 
-  <!-- HERO SECTION -->
-  <header class="hero" id="home">
-    <div class="hero-container">
-      <h1>جماعت احمدیہ کا اسلامی معلومات پورٹل</h1>
-      <p>القرآن الکریم با ترجمہ، کتبِ سلسلہ، اور اہم مذہبی سوالات کے تحریری جوابات۔</p>
-      <div class="search-box">
-        <input type="text" id="searchInput" placeholder="یہاں تلاش کریں...">
-        <button id="searchBtn">تلاش کریں</button>
-      </div>
-    </div>
-  </header>
+    <!-- Main Content Container -->
+    <main class="container">
 
-  <!-- RESOURCES SECTION -->
-  <section id="resources">
-    <div class="container">
-      <div class="section-head">
-        <h2 class="section-title">اہم شعبہ جات</h2>
-        <p class="section-subtitle">آن لائن دینی و علمی مواد (براہِ راست روابط)</p>
-      </div>
-      <div class="grid3">
-        <a href="https://www.alislam.org/quran/" target="_blank" class="card">
-          <div class="icon-box">📖</div>
-          <h3>القرآن الکریم</h3>
-          <p>عربی متن، اردو ترجمہ اور تفصیلی تفاسیر۔</p>
-        </a>
-        <a href="https://www.alislam.org/library/ruhani-khazain/" target="_blank" class="card">
-          <div class="icon-box">📚</div>
-          <h3>روحانی خزائن</h3>
-          <p>حضرت مسیح موعود علیہ السلام کی تمام تصانیف۔</p>
-        </a>
-        <a href="https://www.alislam.org/khilafat/" target="_blank" class="card">
-          <div class="icon-box">🕌</div>
-          <h3>خلافتِ احمدیہ</h3>
-          <p>خلفائے احمدیت کے خطبات اور ہدایات۔</p>
-        </a>
-        <a href="https://www.mta.tv/" target="_blank" class="card">
-          <div class="icon-box">📺</div>
-          <h3>MTA International</h3>
-          <p>مسلم ٹیلی ویژن احمدیہ کے لائیو پروگرامز۔</p>
-        </a>
-      </div>
-    </div>
-  </section>
+        <!-- 1. Main Departments Section -->
+        <section id="departments" class="section-title">
+            <h2>اہم شعبہ جات</h2>
+            <p>آن لائن دینی و علمی مواد (براہِ راست روابط)</p>
+        </section>
 
-  <!-- QNA SECTION -->
-  <section id="qna" style="background-color: var(--bg-soft);">
-    <div class="container">
-      <div class="section-head">
-        <h2 class="section-title">سوال و جواب (Q&A)</h2>
-        <p class="section-subtitle">جواب دیکھنے کے لیے متعلقہ سوال پر کلک کریں</p>
-      </div>
-      <div class="accordion-container" id="accordionContainer">
-        
-        <div class="accordion-item">
-          <button class="accordion-header">
-            <span>سوال 1: جماعت احمدیہ کا عقیدہ ختمِ نبوت کیا ہے؟</span>
-            <span class="accordion-icon">▼</span>
-          </button>
-          <div class="accordion-content">
-            <p>جواب: جماعت احمدیہ کا پختہ ایمان ہے کہ آنحضرت محمد مصطفٰے ﷺ اللہ کے آخری شریعت دہندہ نبی اور "خاتم النبیین" ہیں۔</p>
-            <div class="source">— حوالہ: القرآن، روحانی خزائن</div>
-          </div>
+        <div class="cards-grid">
+            <!-- Card 1 -->
+            <div class="card">
+                <div class="card-icon">📖</div>
+                <div class="card-content">
+                    <h3>القرآن الکریم</h3>
+                    <p>عربی متن، اردو ترجمہ اور تفصیلی تفاسیر۔</p>
+                </div>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="card">
+                <div class="card-icon">📚</div>
+                <div class="card-content">
+                    <h3>روحانی خزائن</h3>
+                    <p>حضرت مسیح موعود علیہ السلام کی تمام تصانیف۔</p>
+                </div>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="card">
+                <div class="card-icon">🕌</div>
+                <div class="card-content">
+                    <h3>خلافتِ احمدیہ</h3>
+                    <p>خلفائے احمدیت کے خطبات اور ہدایات۔</p>
+                </div>
+            </div>
+
+            <!-- Card 4 (Naya Add Kiya) -->
+            <div class="card">
+                <div class="card-icon">📺</div>
+                <div class="card-content">
+                    <h3>ایم ٹی اے انٹرنیشنل</h3>
+                    <p>براہِ راست نشریات اور اسلامی پروگرامز۔</p>
+                </div>
+            </div>
+
+            <!-- Card 5 (Naya Add Kiya) -->
+            <div class="card">
+                <div class="card-icon">❓</div>
+                <div class="card-content">
+                    <h3>سوال و جواب</h3>
+                    <p>عام مذہبی اور عقائدی سوالات کے جوابات۔</p>
+                </div>
+            </div>
+
+            <!-- Card 6 (Naya Add Kiya) -->
+            <div class="card">
+                <div class="card-icon">📰</div>
+                <div class="card-content">
+                    <h3>اخبارات و رسائل</h3>
+                    <p>الفضل، الموعود اور جماعت کے دیگر رسائل۔</p>
+                </div>
+            </div>
         </div>
 
-        <div class="no-results" id="noResults">کوئی سوال نہیں ملا۔</div>
-      </div>
-    </div>
-  </section>
+        <!-- 2. Frequently Asked Questions Section (AlIslam Q&A) -->
+        <section id="faqs" class="section-title" style="margin-top: 40px;">
+            <h2>عام سوالات و جوابات</h2>
+            <p>جماعت احمدیہ کے حوالے سے اہم معلومات</p>
+        </section>
 
-  <footer>
-    <p>© 2026 Ahmadiyya Muslim Community Resource Portal</p>
-  </footer>
+        <div class="faq-container">
+            <details class="faq-item">
+                <summary>جماعت احمدیہ کی بنیاد کب اور کس نے رکھی؟</summary>
+                <div class="faq-answer">
+                    <p>جماعت احمدیہ کی بنیاد حضرت میرزا غلام احمد قادیانی علیہ الصلوٰۃ والسلام (مسیح موعود و مہدی موعود) نے 23 مارچ 1889ء کو قادیان، ہند میں رکھی۔</p>
+                </div>
+            </details>
 
-  <!-- JAVASCRIPT FILE CONNECT HERE -->
-  <script src="script.js"></script>
+            <details class="faq-item">
+                <summary>خلافتِ احمدیہ کا موجودہ مقام کیا ہے؟</summary>
+                <div class="faq-answer">
+                    <p>اس وقت جماعت احمدیہ کے عالمگیر سربراہ حضرت میرزا مسرور احمد خلیفتہ المسیح الخامس ایدہ اللہ تعالیٰ بنصرہ العزیز ہیں۔</p>
+                </div>
+            </details>
+
+            <details class="faq-item">
+                <summary>جماعت احمدیہ کا بنیادی مقصد کیا ہے؟</summary>
+                <div class="faq-answer">
+                    <p>جماعت کا مقصد اسلام کی حقیقی، امن پسند اور پرخلوص تعلیمات کو دنیا بھر میں پھیلانا اور انسان کو اس کے خالق کے قریب کرنا ہے۔</p>
+                </div>
+            </details>
+
+            <details class="faq-item">
+                <summary>الاسلام ویب سائٹ (AlIslam.org) کیا پیش کرتی ہے؟</summary>
+                <div class="faq-answer">
+                    <p>الاسلام ویب سائٹ پر قرآن کریم کے مختلف زبانوں میں تراجم، کتب روحانی خزائن، خطباتِ جمعہ، اور دینی مضامین کا وسیع ذخیرہ موجود ہے۔</p>
+                </div>
+            </details>
+        </div>
+
+    </main>
+
+    <script src="script.js"></script>
 </body>
 </html>
