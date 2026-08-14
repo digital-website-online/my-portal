@@ -1,289 +1,1066 @@
 <!DOCTYPE html>
 <html lang="ur" dir="rtl">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>الاسلام - Resource Portal</title>
+
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-    <!-- Header Section -->
+    <!-- ==========================================
+         HEADER
+         ========================================== -->
 
     <header class="navbar">
-        <!-- 3 Lines Button (Right Side) -->
-        <div class="menu-icon" id="openMenu">
-            <span></span>
-            <span></span>
-            <span></span>
 
-        </div>
+        <div class="navbar-main">
 
-        <div class="logo">
-            <span class="logo-bold" data-i18n="logoBold">الاسلام</span>
-            <span class="logo-sub" data-i18n="logoSub">RESOURCES</span>
-        </div>
+            <button
+                class="menu-icon"
+                id="openMenu"
+                type="button"
+                aria-label="Open navigation menu"
+                aria-controls="sidebar"
+                aria-expanded="false"
+            >
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
 
-        <!-- Professional Language Selector Bar (Resource ke niche) -->
-        <div class="lang-bar" id="langBar">
-            <button class="lang-btn active" data-lang="ur">اردو</button>
-            <button class="lang-btn" data-lang="en">English</button>
-            <button class="lang-btn" data-lang="fr">Français</button>
-            <button class="lang-btn" data-lang="bn">বাংলা</button>
-            <button class="lang-btn" data-lang="ar">العربية</button>
-        </div>
-    </header>
-
-    <!-- Sidebar Menu -->
-    <div id="sidebar" class="sidebar">
-        <div class="sidebar-header">
-            <h3 data-i18n="menuTitle">نیویگیشن Menu</h3>
-            <span id="closeMenu" class="close-btn">&times;</span>
-        </div>
-        <ul class="sidebar-links">
-            <li><a href="#departments" class="menu-link" data-i18n="navDep">اہم شعبہ جات</a></li>
-            <li><a href="#qna" class="menu-link" data-i18n="navQna">عام سوالات و جوابات</a></li>
-            <li><a href="https://www.alislam.org/quran/" target="_blank" class="menu-link" data-i18n="navQuran">القرآن الکریم (تراجم)</a></li>
-            <li><a href="https://www.alislam.org/ruhani-khazain/" target="_blank" class="menu-link" data-i18n="navRuhani">روحانی خزائن</a></li>
-            <li><a href="https://www.alislam.org/khilafat/" target="_blank" class="menu-link" data-i18n="navKhilafat">خلافتِ احمدیہ</a></li>
-            <li><a href="https://www.mta.tv" target="_blank" class="menu-link" data-i18n="navMta">ایم ٹی اے (MTA Live)</a></li>
-            <li><a href="https://www.alislam.org/library/" target="_blank" class="menu-link" data-i18n="navLibrary">کتب خانہ (Library)</a></li>
-            <li><a href="https://www.alislam.org/askmadhur/" target="_blank" class="menu-link" data-i18n="navAsk">سوال و جواب (AlIslam Q&A)</a></li>
-            <li><a href="https://www.alislam.org/press-release/" target="_blank" class="menu-link" data-i18n="navPress">پریس ریلیز</a></li>
-            <li><a href="https://www.alislam.org/contactus/" target="_blank" class="menu-link" data-i18n="navContact">ہم سے رابطہ کریں</a></li>
-        </ul>
-    </div>
-
-    <!-- Overlay Background -->
-    <div id="overlay" class="overlay"></div>
-
-    <!-- Main Container -->
-    <main class="container">
-        <!-- Jama'at Ta'aruf Highlight Section -->
-        <div class="intro-card">
-            <div class="bismillah" data-i18n="bismillah">بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ</div>
-            <div class="intro-title" data-i18n="introTitle">جماعتِ احمدیہ کا مختصر و مکمل تعارف</div>
-
-            <div class="intro-quote">
-                <strong data-i18n="introQuoteTitle">ہمارے مذہب کا خلاصہ اور لبِ لباب:</strong><br>
-                <span data-i18n="introQuoteText">"یہ ہے کہ لا اِلٰہ الا اللّہ محمد رسول اللّہ ہمارا اعتقاد جو ہم اس دنیوی زندگی میں رکھتے ہیں جس کے ساتھ ہم بفضل و توفیق باری تعالیٰ اس عالمِ گزران سے کوچ کریں گے یہ ہے کہ حضرت سیدنا و مولانا محمد مصطفٰے صلی اللہ علیہ وسلم خاتم النبیین و خیر المرسلین ہیں۔"</span>
-                <span class="author-name" data-i18n="introAuthor">— حضرت مرزا غلام احمد قادیانی، مسیح موعود علیہ السلام</span>
+            <div class="logo">
+                <span class="logo-bold" data-i18n="logoBold">الاسلام</span>
+                <span class="logo-sub" data-i18n="logoSub">Resource</span>
             </div>
 
-            <p style="text-align: right; font-size: 14px; line-height: 2; color: #475569;" data-i18n="introDesc">
+        </div>
+
+        <!-- Language Selector -->
+
+        <div
+            class="lang-bar"
+            id="langBar"
+            aria-label="Language selection"
+        >
+
+            <button
+                class="lang-btn active"
+                type="button"
+                data-lang="ur"
+            >
+                اردو
+            </button>
+
+            <button
+                class="lang-btn"
+                type="button"
+                data-lang="en"
+            >
+                English
+            </button>
+
+            <button
+                class="lang-btn"
+                type="button"
+                data-lang="fr"
+            >
+                Français
+            </button>
+
+            <button
+                class="lang-btn"
+                type="button"
+                data-lang="bn"
+            >
+                বাংলা
+            </button>
+
+            <button
+                class="lang-btn"
+                type="button"
+                data-lang="ar"
+            >
+                العربية
+            </button>
+
+        </div>
+
+    </header>
+
+
+    <!-- ==========================================
+         SIDEBAR MENU
+         ========================================== -->
+
+    <aside
+        id="sidebar"
+        class="sidebar"
+        aria-hidden="true"
+    >
+
+        <div class="sidebar-header">
+
+            <h3 data-i18n="menuTitle">
+                نیویگیشن
+            </h3>
+
+            <button
+                id="closeMenu"
+                class="close-btn"
+                type="button"
+                aria-label="Close navigation menu"
+            >
+                &times;
+            </button>
+
+        </div>
+
+
+        <ul class="sidebar-links">
+
+            <li>
+                <a
+                    href="#departments"
+                    class="menu-link"
+                    data-i18n="navDep"
+                >
+                    اہم شعبہ جات
+                </a>
+            </li>
+
+            <li>
+                <a
+                    href="#qna"
+                    class="menu-link"
+                    data-i18n="navQna"
+                >
+                    عام سوالات و جوابات
+                </a>
+            </li>
+
+            <li>
+                <a
+                    href="https://www.alislam.org/quran/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="menu-link"
+                    data-i18n="navQuran"
+                >
+                    القرآن الکریم (تراجم)
+                </a>
+            </li>
+
+            <li>
+                <a
+                    href="https://www.alislam.org/ruhani-khazain/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="menu-link"
+                    data-i18n="navRuhani"
+                >
+                    روحانی خزائن
+                </a>
+            </li>
+
+            <li>
+                <a
+                    href="https://www.alislam.org/khilafat/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="menu-link"
+                    data-i18n="navKhilafat"
+                >
+                    خلافتِ احمدیہ
+                </a>
+            </li>
+
+            <li>
+                <a
+                    href="https://www.mta.tv"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="menu-link"
+                    data-i18n="navMta"
+                >
+                    ایم ٹی اے (MTA Live)
+                </a>
+            </li>
+
+            <li>
+                <a
+                    href="https://www.alislam.org/library/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="menu-link"
+                    data-i18n="navLibrary"
+                >
+                    کتب خانہ (Library)
+                </a>
+            </li>
+
+            <li>
+                <a
+                    href="https://www.alislam.org/askmadhur/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="menu-link"
+                    data-i18n="navAsk"
+                >
+                    سوال و جواب (AlIslam Q&A)
+                </a>
+            </li>
+
+            <li>
+                <a
+                    href="https://www.alislam.org/press-release/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="menu-link"
+                    data-i18n="navPress"
+                >
+                    پریس ریلیز
+                </a>
+            </li>
+
+            <li>
+                <a
+                    href="https://www.alislam.org/contactus/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="menu-link"
+                    data-i18n="navContact"
+                >
+                    ہم سے رابطہ کریں
+                </a>
+            </li>
+
+        </ul>
+
+    </aside>
+
+
+    <!-- Overlay -->
+
+    <div
+        id="overlay"
+        class="overlay"
+        aria-hidden="true"
+    ></div>
+
+
+    <!-- ==========================================
+         MAIN CONTENT
+         ========================================== -->
+
+    <main class="container">
+
+
+        <!-- ======================================
+             INTRODUCTION
+             ====================================== -->
+
+        <section class="intro-card">
+
+            <div
+                class="bismillah"
+                data-i18n="bismillah"
+            >
+                بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ
+            </div>
+
+            <div
+                class="intro-title"
+                data-i18n="introTitle"
+            >
+                جماعتِ احمدیہ کا مختصر و مکمل تعارف
+            </div>
+
+            <div class="intro-quote">
+
+                <strong data-i18n="introQuoteTitle">
+                    ہمارے مذہب کا خلاصہ اور لبِ لباب:
+                </strong>
+
+                <br>
+
+                <span data-i18n="introQuoteText">
+                    "یہ ہے کہ لا اِلٰہ الا اللّہ محمد رسول اللّہ ہمارا اعتقاد جو ہم اس دنیوی زندگی میں رکھتے ہیں جس کے ساتھ ہم بفضل و توفیق باری تعالیٰ اس عالمِ گزران سے کوچ کریں گے یہ ہے کہ حضرت سیدنا و مولانا محمد مصطفٰے صلی اللہ علیہ وسلم خاتم النبیین و خیر المرسلین ہیں۔"
+                </span>
+
+                <span
+                    class="author-name"
+                    data-i18n="introAuthor"
+                >
+                    — حضرت مرزا غلام احمد قادیانی، مسیح موعود علیہ السلام
+                </span>
+
+            </div>
+
+            <p
+                class="intro-description"
+                data-i18n="introDesc"
+            >
                 جماعتِ احمدیہ عالمگیر ایک زبردست روحانی و اصلاحی تحریک ہے جس کی بنیاد 1889ء میں رکھی گئی۔ اس کا بنیادی مقصد اسلام کی حقیقی، پرامن اور مخلصانہ تعلیمات کو دنیا بھر میں عام کرنا اور "محبت سب کے لیے، نفرت کسی سے نہیں" کے تحت انسانیت کی خدمت کرنا ہے۔
             </p>
-        </div>
 
-        <!-- Search Bar Section -->
-        <div class="search-box">
-            <input type="text" id="searchInput" placeholder="تلاش کریں (مثلاً: خلافت, نماز, کتب)..." data-i18n-placeholder="searchPlaceholder">
-            <button id="searchBtn" data-i18n="searchBtnText">تلاش</button>
-        </div>
-
-        <!-- 1. Departments Section -->
-        <section id="departments" class="section-title">
-            <h2 data-i18n="depHeader">اہم شعبہ جات</h2>
-            <p data-i18n="depDesc">آن لائن دینی و علمی مواد (براہِ راست روابط)</p>
         </section>
+
+
+        <!-- ======================================
+             SEARCH
+             ====================================== -->
+
+        <div class="search-box">
+
+            <input
+                type="search"
+                id="searchInput"
+                placeholder="تلاش کریں (مثلاً: خلافت, نماز, کتب)..."
+                data-i18n-placeholder="searchPlaceholder"
+                autocomplete="off"
+                aria-label="Search"
+            >
+
+            <button
+                id="searchBtn"
+                type="button"
+                data-i18n="searchBtnText"
+            >
+                تلاش
+            </button>
+
+        </div>
+
+
+        <!-- ======================================
+             DEPARTMENTS
+             ====================================== -->
+
+        <section
+            id="departments"
+            class="section-title"
+        >
+
+            <h2 data-i18n="depHeader">
+                اہم شعبہ جات
+            </h2>
+
+            <p data-i18n="depDesc">
+                آن لائن دینی و علمی مواد (براہِ راست روابط)
+            </p>
+
+        </section>
+
 
         <div class="cards-grid">
-            <a href="https://www.alislam.org/quran/" target="_blank" class="card">
-                <div class="card-icon">📖</div>
-                <div class="card-content">
-                    <h3 data-i18n="card1Title">القرآن الکریم</h3>
-                    <p data-i18n="card1Desc">عربی متن، اردو ترجمہ اور تفصیلی تفاسیر۔</p>
+
+
+            <!-- Quran -->
+
+            <a
+                href="https://www.alislam.org/quran/"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="card"
+            >
+
+                <div class="card-icon">
+                    📖
                 </div>
+
+                <div class="card-content">
+
+                    <h3 data-i18n="card1Title">
+                        القرآن الکریم
+                    </h3>
+
+                    <p data-i18n="card1Desc">
+                        عربی متن، اردو ترجمہ اور تفصیلی تفاسیر۔
+                    </p>
+
+                </div>
+
             </a>
 
-            <a href="https://www.alislam.org/ruhani-khazain/" target="_blank" class="card">
-                <div class="card-icon">📚</div>
-                <div class="card-content">
-                    <h3 data-i18n="card2Title">روحانی خزائن</h3>
-                    <p data-i18n="card2Desc">حضرت مسیح موعود علیہ السلام کی تمام تصانیف۔</p>
+
+            <!-- Ruhani Khazain -->
+
+            <a
+                href="https://www.alislam.org/ruhani-khazain/"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="card"
+            >
+
+                <div class="card-icon">
+                    📚
                 </div>
+
+                <div class="card-content">
+
+                    <h3 data-i18n="card2Title">
+                        روحانی خزائن
+                    </h3>
+
+                    <p data-i18n="card2Desc">
+                        حضرت مسیح موعود علیہ السلام کی تمام تصانیف۔
+                    </p>
+
+                </div>
+
             </a>
 
-            <a href="https://www.alislam.org/khilafat/" target="_blank" class="card">
-                <div class="card-icon">🕌</div>
-                <div class="card-content">
-                    <h3 data-i18n="card3Title">خلافتِ احمدیہ</h3>
-                    <p data-i18n="card3Desc">خلفائے احمدیت کے خطبات اور ہدایات۔</p>
+
+            <!-- Khilafat -->
+
+            <a
+                href="https://www.alislam.org/khilafat/"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="card"
+            >
+
+                <div class="card-icon">
+                    🕌
                 </div>
+
+                <div class="card-content">
+
+                    <h3 data-i18n="card3Title">
+                        خلافتِ احمدیہ
+                    </h3>
+
+                    <p data-i18n="card3Desc">
+                        خلفائے احمدیت کے خطبات اور ہدایات۔
+                    </p>
+
+                </div>
+
             </a>
 
-            <a href="https://www.mta.tv" target="_blank" class="card">
-                <div class="card-icon">📺</div>
-                <div class="card-content">
-                    <h3 data-i18n="card4Title">ایم ٹی اے انٹرنیشنل</h3>
-                    <p data-i18n="card4Desc">براہِ راست نشریات اور اسلامی پروگرامز۔</p>
+
+            <!-- MTA -->
+
+            <a
+                href="https://www.mta.tv"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="card"
+            >
+
+                <div class="card-icon">
+                    📺
                 </div>
+
+                <div class="card-content">
+
+                    <h3 data-i18n="card4Title">
+                        ایم ٹی اے انٹرنیشنل
+                    </h3>
+
+                    <p data-i18n="card4Desc">
+                        براہِ راست نشریات اور اسلامی پروگرامز۔
+                    </p>
+
+                </div>
+
             </a>
 
-            <a href="https://www.alislam.org/library/" target="_blank" class="card">
-                <div class="card-icon">❓</div>
-                <div class="card-content">
-                    <h3 data-i18n="card5Title">سوال و جواب</h3>
-                    <p data-i18n="card5Desc">عام مذہبی اور عقائدی سوالات کے جوابات۔</p>
+
+            <!-- Q&A -->
+
+            <a
+                href="https://www.alislam.org/askmadhur/"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="card"
+            >
+
+                <div class="card-icon">
+                    ❓
                 </div>
+
+                <div class="card-content">
+
+                    <h3 data-i18n="card5Title">
+                        سوال و جواب
+                    </h3>
+
+                    <p data-i18n="card5Desc">
+                        عام مذہبی اور عقائدی سوالات کے جوابات۔
+                    </p>
+
+                </div>
+
             </a>
 
-            <a href="https://www.alislam.org/press-release/" target="_blank" class="card">
-                <div class="card-icon">📰</div>
-                <div class="card-content">
-                    <h3 data-i18n="card6Title">اخبارات و رسائل</h3>
-                    <p data-i18n="card6Desc">الفضل، الموعود اور جماعت کے دیگر رسائل۔</p>
+
+            <!-- Press Releases -->
+
+            <a
+                href="https://www.alislam.org/press-release/"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="card"
+            >
+
+                <div class="card-icon">
+                    📰
                 </div>
+
+                <div class="card-content">
+
+                    <h3 data-i18n="card6Title">
+                        پریس ریلیز
+                    </h3>
+
+                    <p data-i18n="card6Desc">
+                        جماعتِ احمدیہ کی تازہ پریس ریلیز اور اعلانات۔
+                    </p>
+
+                </div>
+
             </a>
+
+
         </div>
 
-        <!-- 2. Q&A Section -->
-        <section id="qna" class="section-title" style="margin-top: 35px;">
-            <h2 data-i18n="qnaHeader">عام سوالات و جوابات</h2>
-            <p data-i18n="qnaDesc">عام مذہبی اور عقائدی سوالات کے مختصر و جامع جوابات</p>
+
+        <!-- ======================================
+             Q&A
+             ====================================== -->
+
+        <section
+            id="qna"
+            class="section-title qna-section-title"
+        >
+
+            <h2 data-i18n="qnaHeader">
+                عام سوالات و جوابات
+            </h2>
+
+            <p data-i18n="qnaDesc">
+                عام مذہبی اور عقائدی سوالات کے مختصر و جامع جوابات
+            </p>
+
         </section>
 
-        <div id="noResults" class="no-results" style="display: none;" data-i18n="noResultsText">
+
+        <!-- No Results -->
+
+        <div
+            id="noResults"
+            class="no-results"
+            style="display: none;"
+            data-i18n="noResultsText"
+        >
             کوئی نتیجہ نہیں ملا۔ برائے مہربانی مختلف الفاظ سے تلاش کریں۔
         </div>
 
+
+        <!-- ======================================
+             ACCORDION QUESTIONS
+             ====================================== -->
+
         <div class="accordion-container">
-            <div class="accordion-item">
-                <div class="accordion-header" data-i18n="q1Title">1. احمدیہ مسلم جماعت کی بنیاد کب اور کس نے رکھی؟</div>
-                <div class="accordion-content">
-                    <p data-i18n="q1Desc">احمدیہ مسلم جماعت کی بنیاد حضرت مرزا غلام احمد قادیانی علیہ السلام نے 1889ء میں قادیان، ہند میں رکھی۔ آپ نے حضرت محمد صلی اللہ علیہ وسلم کی پیشگوئی کے مطابق اصلاحِ امت کے لیے مامور من اللہ، مسیح موعود اور مہدی ہونے کا دعویٰ فرمایا۔</p>
-                </div>
-            </div>
+
+
+            <!-- Q1 -->
 
             <div class="accordion-item">
-                <div class="accordion-header" data-i18n="q2Title">2. احمدیہ مسلم جماعت کا بنیادی پیغام کیا ہے؟</div>
+
+                <button
+                    class="accordion-header"
+                    type="button"
+                    aria-expanded="false"
+                >
+                    <span data-i18n="q1Title">
+                        1. احمدیہ مسلم جماعت کی بنیاد کب اور کس نے رکھی؟
+                    </span>
+                </button>
+
                 <div class="accordion-content">
-                    <p data-i18n="q2Desc">جماعت کا بنیادی پیغام "محبت سب کے لیے، نفرت کسی سے نہیں" ہے۔ اس کا مقصد خدا تعالی کی توحید کو قائم کرنا اور انسانیت کی بلا تفریق خدمت کرنا ہے۔</p>
+
+                    <p data-i18n="q1Desc">
+                        احمدیہ مسلم جماعت کی بنیاد حضرت مرزا غلام احمد قادیانی علیہ السلام نے 1889ء میں قادیان، ہند میں رکھی۔ آپ نے حضرت محمد صلی اللہ علیہ وسلم کی پیشگوئی کے مطابق اصلاحِ امت کے لیے مامور من اللہ، مسیح موعود اور مہدی ہونے کا دعویٰ فرمایا۔
+                    </p>
+
                 </div>
+
             </div>
 
-            <div class="accordion-item">
-                <div class="accordion-header" data-i18n="q3Title">3. احمدیہ جماعت میں خلافت کا کیا نظام ہے؟</div>
-                <div class="accordion-content">
-                    <p data-i18n="q3Desc">حضرت مسیح موعود علیہ السلام کی وفات کے بعد 1908ء میں خلافتِ احمدیہ کا آغاز ہوا۔ یہ ایک روحانی قیادت کا نظام ہے جو تمام دنیا کے احمدیوں کو ایک حبل اللہ پر متحد رکھتا ہے۔ اس وقت پانچویں خلیفہ حضرت مرزا مسرور احمد ایدہ اللہ تعالی بنصرہ العزیز جماعت کے سربراہ ہیں۔</p>
-                </div>
-            </div>
+
+            <!-- Q2 -->
 
             <div class="accordion-item">
-                <div class="accordion-header" data-i18n="q4Title">4. اسلام کے ارکان پر احمدیوں کا کیا عقیدہ ہے؟</div>
+
+                <button
+                    class="accordion-header"
+                    type="button"
+                    aria-expanded="false"
+                >
+                    <span data-i18n="q2Title">
+                        2. احمدیہ مسلم جماعت کا بنیادی پیغام کیا ہے؟
+                    </span>
+                </button>
+
                 <div class="accordion-content">
-                    <p data-i18n="q4Desc">احمدی مسلم تمام 5 ارکانِ اسلام (کلمہ، نماز، روزہ، زکوۃ، حج) اور ایمان کے 6 ارکان پر پکا ایمان رکھتے ہیں اور حضرت محمد صلی اللہ علیہ وسلم کو خاتم النبیین مانتے ہیں۔</p>
+
+                    <p data-i18n="q2Desc">
+                        جماعت کا بنیادی پیغام "محبت سب کے لیے، نفرت کسی سے نہیں" ہے۔ اس کا مقصد خدا تعالی کی توحید کو قائم کرنا اور انسانیت کی بلا تفریق خدمت کرنا ہے۔
+                    </p>
+
                 </div>
+
             </div>
 
-            <div class="accordion-item">
-                <div class="accordion-header" data-i18n="q5Title">5. خلافتِ احمدیہ کا مرکز کہاں ہے؟</div>
-                <div class="accordion-content">
-                    <p data-i18n="q5Desc">اس وقت خلافتِ احمدیہ کا عالمی مرکز اسلام آباد، ٹلفورڈ، برطانیہ (UK) میں واقع ہے۔</p>
-                </div>
-            </div>
+
+            <!-- Q3 -->
 
             <div class="accordion-item">
-                <div class="accordion-header" data-i18n="q6Title">6. ایم ٹی اے (مسلم ٹیلی ویژن احمدیہ) کیا ہے؟</div>
+
+                <button
+                    class="accordion-header"
+                    type="button"
+                    aria-expanded="false"
+                >
+                    <span data-i18n="q3Title">
+                        3. احمدیہ جماعت میں خلافت کا کیا نظام ہے؟
+                    </span>
+                </button>
+
                 <div class="accordion-content">
-                    <p data-i18n="q6Desc">ایم ٹی اے ایک 24 گھنٹے چلنے والا عالمی سیٹلائٹ ٹی وی نیٹ ورک ہے جو بغیر کسی کمرشل اشتہار کے خالص اسلامی مواد، خطباتِ جمعہ اور دینی تعلیمات پوری دنیا میں نشر کرتا ہے۔</p>
+
+                    <p data-i18n="q3Desc">
+                        حضرت مسیح موعود علیہ السلام کی وفات کے بعد 1908ء میں خلافتِ احمدیہ کا آغاز ہوا۔ یہ ایک روحانی قیادت کا نظام ہے جو تمام دنیا کے احمدیوں کو ایک حبل اللہ پر متحد رکھتا ہے۔ اس وقت پانچویں خلیفہ حضرت مرزا مسرور احمد ایدہ اللہ تعالی بنصرہ العزیز جماعت کے سربراہ ہیں۔
+                    </p>
+
                 </div>
+
             </div>
 
-            <div class="accordion-item">
-                <div class="accordion-header" data-i18n="q7Title">7. alislam.org آفیشل ویب سائٹ پر کیا دستیاب ہے؟</div>
-                <div class="accordion-content">
-                    <p data-i18n="q7Desc">alislam.org احمدیہ مسلم جماعت کی آفیشل انٹرنیشنل ویب سائٹ ہے جہاں قرآن کریم کے تراجم، احادیث، ملفوظات، روحانی خزائن اور ہزاروں دینی کتب متعدد زبانوں میں بالکل مفت دستیاب ہیں۔</p>
-                </div>
-            </div>
+
+            <!-- Q4 -->
 
             <div class="accordion-item">
-                <div class="accordion-header" data-i18n="q8Title">8. روحانی خزائن کیا ہیں؟</div>
+
+                <button
+                    class="accordion-header"
+                    type="button"
+                    aria-expanded="false"
+                >
+                    <span data-i18n="q4Title">
+                        4. اسلام کے ارکان پر احمدیوں کا کیا عقیدہ ہے؟
+                    </span>
+                </button>
+
                 <div class="accordion-content">
-                    <p data-i18n="q8Desc">روحانی خزائن حضرت مسیح موعود علیہ السلام کی تحریر کردہ 80 سے زائد تصانیف (کتب) کا ایک مجموعہ ہے جس میں اسلامی عقائد، دلائل اور فلسفہ دین پر تفصیلی بحث کی گئی ہے۔</p>
+
+                    <p data-i18n="q4Desc">
+                        احمدی مسلم تمام 5 ارکانِ اسلام (کلمہ، نماز، روزہ، زکوۃ، حج) اور ایمان کے 6 ارکان پر پکا ایمان رکھتے ہیں اور حضرت محمد صلی اللہ علیہ وسلم کو خاتم النبیین مانتے ہیں۔
+                    </p>
+
                 </div>
+
             </div>
 
-            <div class="accordion-item">
-                <div class="accordion-header" data-i18n="q9Title">9. وقفِ نو تحریک کیا ہے؟</div>
-                <div class="accordion-content">
-                    <p data-i18n="q9Desc">یہ ایک عظیم دینی منصوبی اور تحریک ہے جس میں احمدی والدین اپنے بچوں کو ان کی پیدائش سے پہلے خدا کی راہ اور اسلام کی خدمت کے لیے وقف کرتے ہیں۔</p>
-                </div>
-            </div>
+
+            <!-- Q5 -->
 
             <div class="accordion-item">
-                <div class="accordion-header" data-i18n="q10Title">10. جلسہ سالانہ کیا ہوتا ہے؟</div>
+
+                <button
+                    class="accordion-header"
+                    type="button"
+                    aria-expanded="false"
+                >
+                    <span data-i18n="q5Title">
+                        5. خلافتِ احمدیہ کا مرکز کہاں ہے؟
+                    </span>
+                </button>
+
                 <div class="accordion-content">
-                    <p data-i18n="q10Desc">جلسہ سالانہ ایک 3 روزہ سالانہ دینی و تربیتی کانفرنس ہوتی ہے جو دنیا کے مختلف ممالک میں مقدس دینی ماحول میں منعقد کی جاتی ہے۔</p>
+
+                    <p data-i18n="q5Desc">
+                        اس وقت خلافتِ احمدیہ کا عالمی مرکز اسلام آباد، ٹلفورڈ، برطانیہ (UK) میں واقع ہے۔
+                    </p>
+
                 </div>
+
             </div>
 
-            <div class="accordion-item">
-                <div class="accordion-header" data-i18n="q11Title">11. زکوۃ اور چندہ میں کیا فرق ہے؟</div>
-                <div class="accordion-content">
-                    <p data-i18n="q11Desc">زکوۃ فرض ارکانِ اسلام میں سے ہے۔ جبکہ چندہ (مالی قربانی) اپنے مال سے جماعتی و دینی اخراجات، تبلیغ اور غریبوں کی مدد کے لیے ایک اختیاری مالی قربانی کا نظام ہے۔</p>
-                </div>
-            </div>
+
+            <!-- Q6 -->
 
             <div class="accordion-item">
-                <div class="accordion-header" data-i18n="q12Title">12. ہیومینٹی فرسٹ (Humanity First) کیا ہے؟</div>
+
+                <button
+                    class="accordion-header"
+                    type="button"
+                    aria-expanded="false"
+                >
+                    <span data-i18n="q6Title">
+                        6. ایم ٹی اے (مسلم ٹیلی ویژن احمدیہ) کیا ہے؟
+                    </span>
+                </button>
+
                 <div class="accordion-content">
-                    <p data-i18n="q12Desc">ہیومینٹی فرسٹ ایک بین الاقوامی رفاہی ادارہ (Charity Organization) ہے جو بغیر کسی مذہب، ذات یا رنگ کے فرق کے، دنیا بھر کے آفت زدہ اور ضرورت مند لوگوں کی خدمت کرتا ہے۔</p>
+
+                    <p data-i18n="q6Desc">
+                        ایم ٹی اے ایک 24 گھنٹے چلنے والا عالمی سیٹلائٹ ٹی وی نیٹ ورک ہے جو بغیر کسی کمرشل اشتہار کے خالص اسلامی مواد، خطباتِ جمعہ اور دینی تعلیمات پوری دنیا میں نشر کرتا ہے۔
+                    </p>
+
                 </div>
+
             </div>
 
-            <div class="accordion-item">
-                <div class="accordion-header" data-i18n="q13Title">13. تحریکِ جدید اور وقفِ جدید کیا ہیں؟</div>
-                <div class="accordion-content">
-                    <p data-i13n="q13Desc">یہ خلافتِ احمدیہ کی طرف سے شروع کی گئی دو عظیم مالی و روحانی تحریکات ہیں جن کا مقصد دنیا بھر میں اسلام کا پیغام پہنچانا، مساجد بنانا اور تعلیمی و طبی مراکز قائم کرنا ہے۔</p>
-                </div>
-            </div>
+
+            <!-- Q7 -->
 
             <div class="accordion-item">
-                <div class="accordion-header" data-i18n="q14Title">14. لجنہ اماء اللہ کیا ہے؟</div>
+
+                <button
+                    class="accordion-header"
+                    type="button"
+                    aria-expanded="false"
+                >
+                    <span data-i18n="q7Title">
+                        7. alislam.org آفیشل ویب سائٹ پر کیا دستیاب ہے؟
+                    </span>
+                </button>
+
                 <div class="accordion-content">
-                    <p data-i14n="q14Desc">لجنہ اماء اللہ احمدیہ جماعت کی خواتین کی ذیلی تنظیم ہے جو خواتین کی تعلیم، تربیت اور سماجی خدمت کے لیے مستقل طور پر کام کرتی ہے۔</p>
+
+                    <p data-i18n="q7Desc">
+                        alislam.org احمدیہ مسلم جماعت کی آفیشل انٹرنیشنل ویب سائٹ ہے جہاں قرآن کریم کے تراجم، احادیث، ملفوظات، روحانی خزائن اور ہزاروں دینی کتب متعدد زبانوں میں بالکل مفت دستیاب ہیں۔
+                    </p>
+
                 </div>
+
             </div>
 
-            <div class="accordion-item">
-                <div class="accordion-header" data-i18n="q15Title">15. خدام الاحمدیہ اور انصار اللہ کیا ہیں؟</div>
-                <div class="accordion-content">
-                    <p data-i15n="q15Desc">15 سے 40 سال کے نوجوانوں کی تنظیم کو "مجلس خدام الاحمدیہ" اور 40 سال سے زائد عمر کے بزرگوں کی تنظیم کو "مجلس انصار اللہ" کہا جاتا ہے۔</p>
-                </div>
-            </div>
+
+            <!-- Q8 -->
 
             <div class="accordion-item">
-                <div class="accordion-header" data-i18n="q16Title">16. احمدیہ مساجد کی کیا خصوصیت ہے؟</div>
+
+                <button
+                    class="accordion-header"
+                    type="button"
+                    aria-expanded="false"
+                >
+                    <span data-i18n="q8Title">
+                        8. روحانی خزائن کیا ہیں؟
+                    </span>
+                </button>
+
                 <div class="accordion-content">
-                    <p data-i16n="q16Desc">احمدیہ مساجد عبادتِ الہی کے علاوہ استقبال، امن اور بھائی چارے کا مرکز ہوتی ہیں جہاں ہر امن پسند انسان کا خیر مقدم کیا جاتا ہے۔</p>
+
+                    <p data-i18n="q8Desc">
+                        روحانی خزائن حضرت مسیح موعود علیہ السلام کی تحریر کردہ 80 سے زائد تصانیف (کتب) کا ایک مجموعہ ہے جس میں اسلامی عقائد، دلائل اور فلسفہ دین پر تفصیلی بحث کی گئی ہے۔
+                    </p>
+
                 </div>
+
             </div>
+
+
+            <!-- Q9 -->
+
+            <div class="accordion-item">
+
+                <button
+                    class="accordion-header"
+                    type="button"
+                    aria-expanded="false"
+                >
+                    <span data-i18n="q9Title">
+                        9. وقفِ نو تحریک کیا ہے؟
+                    </span>
+                </button>
+
+                <div class="accordion-content">
+
+                    <p data-i18n="q9Desc">
+                        یہ ایک عظیم دینی منصوبی اور تحریک ہے جس میں احمدی والدین اپنے بچوں کو ان کی پیدائش سے پہلے خدا کی راہ اور اسلام کی خدمت کے لیے وقف کرتے ہیں۔
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- Q10 -->
+
+            <div class="accordion-item">
+
+                <button
+                    class="accordion-header"
+                    type="button"
+                    aria-expanded="false"
+                >
+                    <span data-i18n="q10Title">
+                        10. جلسہ سالانہ کیا ہوتا ہے؟
+                    </span>
+                </button>
+
+                <div class="accordion-content">
+
+                    <p data-i18n="q10Desc">
+                        جلسہ سالانہ ایک 3 روزہ سالانہ دینی و تربیتی کانفرنس ہوتی ہے جو دنیا کے مختلف ممالک میں مقدس دینی ماحول میں منعقد کی جاتی ہے۔
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- Q11 -->
+
+            <div class="accordion-item">
+
+                <button
+                    class="accordion-header"
+                    type="button"
+                    aria-expanded="false"
+                >
+                    <span data-i18n="q11Title">
+                        11. زکوۃ اور چندہ میں کیا فرق ہے؟
+                    </span>
+                </button>
+
+                <div class="accordion-content">
+
+                    <p data-i18n="q11Desc">
+                        زکوۃ فرض ارکانِ اسلام میں سے ہے۔ جبکہ چندہ (مالی قربانی) اپنے مال سے جماعتی و دینی اخراجات، تبلیغ اور غریبوں کی مدد کے لیے ایک اختیاری مالی قربانی کا نظام ہے۔
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- Q12 -->
+
+            <div class="accordion-item">
+
+                <button
+                    class="accordion-header"
+                    type="button"
+                    aria-expanded="false"
+                >
+                    <span data-i18n="q12Title">
+                        12. ہیومینٹی فرسٹ (Humanity First) کیا ہے؟
+                    </span>
+                </button>
+
+                <div class="accordion-content">
+
+                    <p data-i18n="q12Desc">
+                        ہیومینٹی فرسٹ ایک بین الاقوامی رفاہی ادارہ (Charity Organization) ہے جو بغیر کسی مذہب، ذات یا رنگ کے فرق کے، دنیا بھر کے آفت زدہ اور ضرورت مند لوگوں کی خدمت کرتا ہے۔
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- Q13 -->
+
+            <div class="accordion-item">
+
+                <button
+                    class="accordion-header"
+                    type="button"
+                    aria-expanded="false"
+                >
+                    <span data-i18n="q13Title">
+                        13. تحریکِ جدید اور وقفِ جدید کیا ہیں؟
+                    </span>
+                </button>
+
+                <div class="accordion-content">
+
+                    <p data-i18n="q13Desc">
+                        یہ خلافتِ احمدیہ کی طرف سے شروع کی گئی دو عظیم مالی و روحانی تحریکات ہیں جن کا مقصد دنیا بھر میں اسلام کا پیغام پہنچانا، مساجد بنانا اور تعلیمی و طبی مراکز قائم کرنا ہے۔
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- Q14 -->
+
+            <div class="accordion-item">
+
+                <button
+                    class="accordion-header"
+                    type="button"
+                    aria-expanded="false"
+                >
+                    <span data-i18n="q14Title">
+                        14. لجنہ اماء اللہ کیا ہے؟
+                    </span>
+                </button>
+
+                <div class="accordion-content">
+
+                    <p data-i18n="q14Desc">
+                        لجنہ اماء اللہ احمدیہ جماعت کی خواتین کی ذیلی تنظیم ہے جو خواتین کی تعلیم، تربیت اور سماجی خدمت کے لیے مستقل طور پر کام کرتی ہے۔
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- Q15 -->
+
+            <div class="accordion-item">
+
+                <button
+                    class="accordion-header"
+                    type="button"
+                    aria-expanded="false"
+                >
+                    <span data-i18n="q15Title">
+                        15. خدام الاحمدیہ اور انصار اللہ کیا ہیں؟
+                    </span>
+                </button>
+
+                <div class="accordion-content">
+
+                    <p data-i18n="q15Desc">
+                        15 سے 40 سال کے نوجوانوں کی تنظیم کو "مجلس خدام الاحمدیہ" اور 40 سال سے زائد عمر کے بزرگوں کی تنظیم کو "مجلس انصار اللہ" کہا جاتا ہے۔
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- Q16 -->
+
+            <div class="accordion-item">
+
+                <button
+                    class="accordion-header"
+                    type="button"
+                    aria-expanded="false"
+                >
+                    <span data-i18n="q16Title">
+                        16. احمدیہ مساجد کی کیا خصوصیت ہے؟
+                    </span>
+                </button>
+
+                <div class="accordion-content">
+
+                    <p data-i18n="q16Desc">
+                        احمدیہ مساجد عبادتِ الہی کے علاوہ استقبال، امن اور بھائی چارے کا مرکز ہوتی ہیں جہاں ہر امن پسند انسان کا خیر مقدم کیا جاتا ہے۔
+                    </p>
+
+                </div>
+
+            </div>
+
+
         </div>
+
     </main>
 
-    <!-- Chatbot Widget -->
-    <div class="chat-widget-btn" id="chatWidgetBtn">💬</div>
 
-    <div class="chat-box" id="chatBox">
-        <div class="chat-header">
-            <span data-i18n="chatTitleText">AI الاسلام اسسٹنٹ</span>
-            <span class="close-chat" id="closeChat">&times;</span>
-        </div>
-        <div class="chat-messages" id="chatMessages">
-            <div class="message bot-message" data-i18n="botWelcome">السلام علیکم! میں آپ کا ڈیجیٹل اسسٹنٹ ہوں۔ آپ کیا جاننا چاہتے ہیں؟</div>
-        </div>
-        <div class="chat-input-container">
-            <input type="text" id="chatInput" placeholder="اپنا سوال لکھیں..." data-i18n-placeholder="chatPlaceholder">
-            <button id="sendChatBtn" data-i18n="sendBtnText">بھیجیں</button>
-        </div>
+    <!-- ==========================================
+         AI ASSISTANT
+         ========================================== -->
+
+    <div
+        class="chat-widget-btn"
+        id="chatWidgetBtn"
+        role="button"
+        tabindex="0"
+        aria-label="Open AI Assistant"
+        aria-controls="chatBox"
+        aria-expanded="false"
+    >
+        💬
     </div>
 
-   
-<script src="script.js"></script>
-<script src="ai-chat.js"></script>
-<script src="theme.js"></script>
 
+    <div
+        class="chat-box"
+        id="chatBox"
+        aria-hidden="true"
+    >
+
+        <div class="chat-header">
+
+            <span data-i18n="chatTitleText">
+                AI الاسلام اسسٹنٹ
+            </span>
+
+            <button
+                class="close-chat"
+                id="closeChat"
+                type="button"
+                aria-label="Close AI Assistant"
+            >
+                &times;
+            </button>
+
+        </div>
+
+
+        <div
+            class="chat-messages"
+            id="chatMessages"
+        >
+
+            <div
+                class="message bot-message"
+                data-i18n="botWelcome"
+            >
+                السلام علیکم! میں آپ کا ڈیجیٹل اسسٹنٹ ہوں۔ آپ کیا جاننا چاہتے ہیں؟
+            </div>
+
+        </div>
+
+
+        <div class="chat-input-container">
+
+            <input
+                type="text"
+                id="chatInput"
+                placeholder="اپنا سوال لکھیں..."
+                data-i18n-placeholder="chatPlaceholder"
+                autocomplete="off"
+            >
+
+            <button
+                id="sendChatBtn"
+                type="button"
+                data-i18n="sendBtnText"
+            >
+                بھیجیں
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <!-- ==========================================
+         JAVASCRIPT FILES
+         ========================================== -->
+
+    <script src="script.js"></script>
+    <script src="ai-chat.js"></script>
+    <script src="theme.js"></script>
 
 </body>
 </html>
