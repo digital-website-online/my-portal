@@ -97,4 +97,67 @@ document.addEventListener("DOMContentLoaded", function () {
             }
         });
     }
+
+    // ==========================================
+    // Chatbot Popup Functionality (New Added)
+    // ==========================================
+    const chatWidgetBtn = document.getElementById("chatWidgetBtn");
+    const chatBox = document.getElementById("chatBox");
+    const closeChat = document.getElementById("closeChat");
+    const chatInput = document.getElementById("chatInput");
+    const sendChatBtn = document.getElementById("sendChatBtn");
+    const chatMessages = document.getElementById("chatMessages");
+
+    if (chatWidgetBtn && chatBox) {
+        // Open chat window and focus input
+        chatWidgetBtn.addEventListener("click", () => {
+            chatBox.classList.add("active");
+            setTimeout(() => {
+                if (chatInput) chatInput.focus();
+            }, 100);
+        });
+
+        // Close chat window
+        if (closeChat) {
+            closeChat.addEventListener("click", () => {
+                chatBox.classList.remove("active");
+            });
+        }
+
+        // Send message handler
+        function handleSend() {
+            const text = chatInput.value.trim();
+            if (text !== "") {
+                // Display User Message
+                const userMsg = document.createElement("div");
+                userMsg.className = "message user-message";
+                userMsg.textContent = text;
+                chatMessages.appendChild(userMsg);
+
+                chatInput.value = "";
+                chatMessages.scrollTop = chatMessages.scrollHeight;
+
+                // Auto Bot Reply Simulation
+                setTimeout(() => {
+                    const botMsg = document.createElement("div");
+                    botMsg.className = "message bot-message";
+                    botMsg.textContent = "آپ کے سوال کا جواب تیار کیا جا رہا ہے...";
+                    chatMessages.appendChild(botMsg);
+                    chatMessages.scrollTop = chatMessages.scrollHeight;
+                }, 600);
+            }
+        }
+
+        if (sendChatBtn) {
+            sendChatBtn.addEventListener("click", handleSend);
+        }
+
+        if (chatInput) {
+            chatInput.addEventListener("keypress", (e) => {
+                if (e.key === "Enter") {
+                    handleSend();
+                }
+            });
+        }
+    }
 });
