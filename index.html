@@ -254,28 +254,22 @@
 
     </main>
 
-    <!-- Floating Chatbot Button -->
-    <div id="chatWidgetBtn" class="chat-widget-btn">
-        💬
-    </div>
+    <div class="chat-widget-btn" id="chatWidgetBtn">
+    💬
+</div>
 
-    <!-- Chatbot Popup Window -->
-    <div id="chatBox" class="chat-box">
-        <div class="chat-header">
-            <span>الاسلام اسسٹنٹ (AI)</span>
-            <span id="closeChat" class="close-chat">&times;</span>
-        </div>
-        <div id="chatMessages" class="chat-messages">
-            <div class="message bot-message">
-                السلام علیکم! میں الاسلام کا اسسٹنٹ ہوں۔ آپ مجھ سے کوئی بھی مذہبی یا جماعتی سوال پوچھ سکتے ہیں۔
-            </div>
-        </div>
-        <div class="chat-input-container">
-            <input type="text" id="chatInput" placeholder="اپنا سوال لکھیں..." autocomplete="off">
-            <button id="sendChatBtn">►</button>
-        </div>
+<div class="chat-box" id="chatBox">
+    <div class="chat-header">
+        <span>AI الاالسلام اسسٹنٹ</span>
+        <span class="close-chat" id="closeChat">&times;</span>
     </div>
+    <div class="chat-messages" id="chatMessages">
+        <div class="message bot-message">السلام علیکم! میں آپ کا ڈیجیٹل اسسٹنٹ ہوں۔ آپ کیا جاننا چاہتے ہیں؟</div>
+    </div>
+    <div class="chat-input-container">
+        <input type="text" id="chatInput" placeholder="اپنا سوال لکھیں...">
+        <button id="sendChatBtn">بھیجیں</button>
+    </div>
+</div>
+<script src="script.js"></script>
 
-    <script src="script.js"></script>
-</body>
-</html>
