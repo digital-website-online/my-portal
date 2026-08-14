@@ -19,21 +19,20 @@ document.addEventListener("DOMContentLoaded", function () {
         }
 
         async function askGemini(userPrompt) {
-            const part1 = "AQ.Ab8RN6Kh6G0GfcQt";
-            const part2 = "7cYye6MebPNGU9J6iIP1TkYkqd826y2Tg";
-            const apiKey = part1 + part2;
-            const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent`;
+            const apiKey = "AQ.Ab8RN6I-RsFiKVBFEGkNsNsGoCIT_En...Yahan_Apni_Puri_Key_Laga_Lena"; // Agar zaroorat paray toh apni poori key yahan check kar lena
+            const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${apiKey}`;
 
             const systemRule = "You are an official digital assistant for an Ahmadiyya Muslim Community resource portal. Answer queries strictly and comprehensively regarding Ahmadiyya Muslim Jama'at, its history, Khilafat, teachings, books of Hazrat Mirza Ghulam Ahmad (as), and AlIslam.org resources.";
 
             try {
                 const response = await fetch(url, {
                     method: 'POST',
-                    headers: { 'Content-Type': 'application/json', 'x-goog-api-key': apiKey },
+                    headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify({ contents: [{ parts: [{ text: systemRule + "\n\nUser Question: " + userPrompt }] }] })
                 });
                 const data = await response.json();
                 if (data.candidates && data.candidates[0].content) return data.candidates[0].content.parts[0].text;
+                if (data.error) return "API Error: " + data.error.message;
                 return "معذرت، سرور سے جواب موصول نہیں ہوا۔";
             } catch (error) { return "انٹرنیٹ کنکشن کا مسئلہ ہے۔"; }
         }
@@ -46,7 +45,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 chatInput.value = "";
                 const loadingMsg = document.createElement("div");
                 loadingMsg.className = "message bot-message";
-                loadingMsg.textContent = "تلاش کیا جا رہا ہے...";
+                loadingMsg.textContent = "تلاش کیا جا रहा ہے...";
                 chatMessages.appendChild(loadingMsg);
                 
                 const aiReply = await askGemini(text);
