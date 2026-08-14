@@ -1,4 +1,4 @@
-document.addEventListener("DOMContentLoaded", function () {
+Document.addEventListener("DOMContentLoaded", function () {
     // ==========================================
     // 1. Sidebar Toggle Functionality
     // ==========================================
@@ -266,26 +266,26 @@ document.addEventListener("DOMContentLoaded", function () {
             introQuoteTitle: "আমাদের ধর্মের মূল সারসংক্ষেপ:",
             introQuoteText: "\"তা হলো লা ইলাহা ইল্লাল্লাহু মুহাম্মাদুর রাসূলুল্লাহ। দুনিয়ার জীবনে আমাদের এই বিশ্বাস...\"",
             introAuthor: "— হযরত মির্জা গোলাম আহমদ কাদিয়ানী, প্রতিশ্ৰুত মসীহ",
-            introDesc: "আহমদিয়া মুসলিম জামায়াত ১৮৮৯ সালে প্রতিষ্ঠিত একটি বৈশ্বিক আধ্যাত্মিক ও সংস্কারমূলক আন্দোলন।",
+            introDesc: "আহমদিয়া মুসলিম জামায়াত ১৮৮৯ সালে প্রতিষ্ঠিত একটি বৈশ্বিক আধ্যাত্মিক ও সংস্কারমূলক আন্দোলন۔",
             searchPlaceholder: "অনুসন্ধান করুন (যেমন: খিলাফত, সালাত, বই)...",
             searchBtnText: "অনুসন্ধান",
             depHeader: "মূল বিভাগসমূহ",
             depDesc: "অনলাইন ধর্মীয় এবং একাডেমিক সম্পদ (সরাসরি লিঙ্ক)",
             card1Title: "আল-কুরআনুল কারীম",
-            card1Desc: "আরবি পাঠ, বাংলা অনুবাদ এবং বিস্তারিত তাফসীর।",
+            card1Desc: "আরবি পাঠ, বাংলা অনুবাদ এবং বিস্তারিত তাফসীর۔",
             card2Title: "রূহানী খাযাইন",
-            card2Desc: "প্রতিশ্ৰুত মসীহ আলাইহিস সালামের সকল গ্রন্থাবলী।",
+            card2Desc: "প্রতিশ্ৰুত মসীহ আলাইহিস সালামের সকল গ্রন্থাবলী۔",
             card3Title: "আহমদিয়া খিলাফত",
-            card3Desc: "খুলাফায়ে আহমদের খুতবা ও দিকনির্দেশনা।",
+            card3Desc: "খুলাফায়ে আহমদের খুতবা ও দিকনির্দেশনা۔",
             card4Title: "এমটিএ ইন্টারন্যাশনাল",
-            card4Desc: "সরাসরি সম্প্রচার এবং শিক্ষামূলক ইসলামী অনুষ্ঠান।",
+            card4Desc: "সরাসরি সম্প্রচার এবং শিক্ষামূলক ইসলামী অনুষ্ঠান۔",
             card5Title: "প্রশ্ন ও উত্তর",
-            card5Desc: "সাধারণ ধর্মীয় ও বিশ্বাসগত প্রশ্নগুলোর উত্তর।",
+            card5Desc: "সাধারণ ধর্মীয় ও বিশ্বাসগত প্রশ্নগুলোর উত্তর۔",
             card6Title: "সংবাদপত্র ও সাময়িকী",
-            card6Desc: "আল-ফজল এবং অন্যান্য জামഅতের প্রকাশনা।",
+            card6Desc: "আল-ফজল এবং অন্যান্য জামഅতের প্রকাশনা۔",
             qnaHeader: "সচরাচর জিজ্ঞাস্য প্রশ্নাবলী",
             qnaDesc: "ধর্মীয় ও বিশ্বাসগত প্রশ্নগুলোর সংক্ষিপ্ত এবং ব্যাপক উত্তর",
-            noResultsText: "কোনো ফলাফল পাওয়া যায়নি। অনুগ্রহ করে ভিন্ন শব্দ দিয়ে অনুসন্ধান করুন।",
+            noResultsText: "কোনো ফলাফল পাওয়া যায়নি। অনুগ্রহ করে ভিন্ন শব্দ দিয়ে অনুসন্ধান করুন۔",
             chatTitleText: "এআই আল-ইসলাম সহকারী",
             botWelcome: "আসসালামু আলাইকুম! আমি আপনার ডিজিটাল সহকারী। আপনি কী জানতে চান?",
             chatPlaceholder: "আপনার প্রশ্ন লিখুন...",
@@ -395,7 +395,7 @@ document.addEventListener("DOMContentLoaded", function () {
             const part1 = "AQ.Ab8RN6Kh6G0GfcQt";
             const part2 = "7cYye6MebPNGU9J6iIP1TkYkqd826y2Tg";
             const apiKey = part1 + part2;
-            
+
             const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${apiKey}`;
 
             const systemRule = "You are an official digital assistant for an Ahmadiyya Muslim Community resource portal. Answer queries strictly and comprehensively regarding Ahmadiyya Muslim Jama'at, its history, Khilafat, teachings, books of Hazrat Mirza Ghulam Ahmad (as), and AlIslam.org resources in the user's requested language.";
@@ -420,7 +420,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 });
 
                 const data = await response.json();
-                
+
                 if (data.candidates && data.candidates.length > 0 && data.candidates[0].content) {
                     return data.candidates[0].content.parts[0].text;
                 } else if (data.error) {
