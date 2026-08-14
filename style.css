@@ -13,17 +13,19 @@ body {
     text-align: right;
     font-family: 'Noto Nastaliq Urdu', 'Jameel Noori Nastaliq', 'Urdu Typesetting', serif;
     font-size: 16px;
-    line-height: 2.2; /* Nastaliq font ki lines ko aapas mein jodne se rokne ke liye */
+    line-height: 2.2;
     -webkit-font-smoothing: antialiased;
 }
 
+/* ==========================================
+   Navbar
+   ========================================== */
 
-/* Navbar */
 .navbar {
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
     align-items: center;
-    padding: 12px 20px;
+    padding: 12px 15px;
     background-color: #ffffff;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
     position: sticky;
@@ -34,6 +36,7 @@ body {
 .logo {
     font-size: 19px;
     font-weight: bold;
+    margin-bottom: 2px;
 }
 
 .logo-bold {
@@ -45,7 +48,11 @@ body {
 }
 
 /* 3 Lines Icon */
+
 .menu-icon {
+    position: absolute;
+    right: 20px;
+    top: 18px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -61,7 +68,57 @@ body {
     border-radius: 3px;
 }
 
-/* Sidebar Animation */
+/* ==========================================
+   Language Bar
+   ========================================== */
+
+.lang-bar {
+    display: flex;
+    gap: 6px;
+    overflow-x: auto;
+    padding: 5px 0;
+    margin-top: 5px;
+    scrollbar-width: none;
+    max-width: 100%;
+}
+
+.lang-bar::-webkit-scrollbar {
+    display: none;
+}
+
+.lang-btn {
+    background-color: rgba(255, 255, 255, 0.15);
+    color: #0d5c3a;
+    border: 1px solid #0d5c3a;
+    padding: 4px 10px;
+    border-radius: 15px;
+    font-size: 12px;
+    font-weight: bold;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.lang-btn:hover {
+    background-color: #0d5c3a;
+    color: white;
+}
+
+.lang-btn.active {
+    background-color: #0d5c3a;
+    color: white;
+    transform: scale(1.08);
+    box-shadow: 0 4px 10px rgba(13, 92, 58, 0.3);
+}
+
+.lang-btn:active {
+    transform: scale(0.92);
+}
+
+/* ==========================================
+   Sidebar Menu
+   ========================================== */
+
 .sidebar {
     position: fixed;
     top: 0;
@@ -123,7 +180,10 @@ body {
     color: #0d5c3a;
 }
 
-/* Overlay */
+/* ==========================================
+   Overlay
+   ========================================== */
+
 .overlay {
     position: fixed;
     top: 0;
@@ -142,14 +202,67 @@ body {
     visibility: visible;
 }
 
-/* Main Container */
+/* ==========================================
+   Main Container
+   ========================================== */
+
 .container {
     max-width: 550px;
     margin: 15px auto;
     padding: 0 15px;
 }
 
-/* Search Bar */
+/* ==========================================
+   Intro Highlight Box
+   ========================================== */
+
+.intro-card {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 25px;
+    text-align: center;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.02);
+}
+
+.bismillah {
+    font-size: 18px;
+    color: #0d5c3a;
+    margin-bottom: 10px;
+}
+
+.intro-title {
+    font-size: 18px;
+    color: #0d5c3a;
+    font-weight: bold;
+    margin-bottom: 12px;
+}
+
+.intro-quote {
+    background: #f0fdf4;
+    border-right: 4px solid #0d5c3a;
+    padding: 12px 15px;
+    text-align: right;
+    border-radius: 6px;
+    margin: 15px 0;
+    font-size: 14px;
+    line-height: 2.1;
+    color: #1e293b;
+}
+
+.author-name {
+    display: block;
+    font-weight: bold;
+    color: #0d5c3a;
+    margin-top: 8px;
+    font-size: 13px;
+}
+
+/* ==========================================
+   Search Bar
+   ========================================== */
+
 .search-box {
     display: flex;
     gap: 8px;
@@ -163,6 +276,7 @@ body {
     border-radius: 8px;
     font-size: 13px;
     outline: none;
+    font-family: inherit;
 }
 
 .search-box input:focus {
@@ -177,7 +291,16 @@ body {
     border-radius: 8px;
     cursor: pointer;
     font-size: 13px;
+    font-family: inherit;
 }
+
+.search-box button:active {
+    transform: scale(0.97);
+}
+
+/* ==========================================
+   Section Titles
+   ========================================== */
 
 .section-title h2 {
     color: #0d5c3a;
@@ -190,7 +313,10 @@ body {
     margin-top: 2px;
 }
 
-/* Cards (Compact Look) */
+/* ==========================================
+   Cards
+   ========================================== */
+
 .cards-grid {
     display: flex;
     flex-direction: column;
@@ -216,11 +342,20 @@ body {
     background-color: #f8fafc;
 }
 
+.card:active {
+    transform: scale(0.99);
+}
+
 .card-icon {
     font-size: 20px;
     background: #f0fdf4;
     padding: 6px 10px;
     border-radius: 6px;
+    flex-shrink: 0;
+}
+
+.card-content {
+    min-width: 0;
 }
 
 .card-content h3 {
@@ -234,7 +369,10 @@ body {
     margin-top: 2px;
 }
 
-/* Accordion Q&A */
+/* ==========================================
+   Accordion Q&A
+   ========================================== */
+
 .accordion-container {
     display: flex;
     flex-direction: column;
@@ -251,6 +389,7 @@ body {
 
 .accordion-header {
     padding: 12px;
+    padding-left: 35px;
     font-size: 13px;
     font-weight: 600;
     color: #1e293b;
@@ -264,13 +403,15 @@ body {
     content: '◄';
     position: absolute;
     left: 12px;
+    top: 50%;
+    transform: translateY(-50%);
     font-size: 10px;
     color: #0d5c3a;
     transition: transform 0.3s;
 }
 
 .accordion-item.active .accordion-header::after {
-    transform: rotate(-90deg);
+    transform: translateY(-50%) rotate(-90deg);
 }
 
 .accordion-content {
@@ -288,6 +429,10 @@ body {
     border-top: 1px solid #f1f5f9;
 }
 
+/* ==========================================
+   No Results
+   ========================================== */
+
 .no-results {
     background: #fef2f2;
     color: #991b1b;
@@ -298,98 +443,14 @@ body {
     text-align: center;
 }
 
-/* Intro Highlight Box */
-.intro-card {
-    background: #ffffff;
-    border: 1px solid #e2e8f0;
-    border-radius: 12px;
-    padding: 20px;
-    margin-bottom: 25px;
-    text-align: center;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.02);
-}
+/* ==========================================
+   Chat Button
+   ========================================== */
 
-.bismillah {
-    font-size: 18px;
-    color: #0d5c3a;
-    margin-bottom: 10px;
-}
-
-.intro-title {
-    font-size: 18px;
-    color: #0d5c3a;
-    font-weight: bold;
-    margin-bottom: 12px;
-}
-
-.intro-quote {
-    background: #f0fdf4;
-    border-right: 4px solid #0d5c3a;
-    padding: 12px 15px;
-    text-align: right;
-    border-radius: 6px;
-    margin: 15px 0;
-    font-size: 14px;
-    line-height: 2.1;
-    color: #1e293b;
-}
-
-.author-name {
-    display: block;
-    font-weight: bold;
-    color: #0d5c3a;
-    margin-top: 8px;
-    font-size: 13px;
-}
-/* Intro Highlight Box */
-.intro-card {
-    background: #ffffff;
-    border: 1px solid #e2e8f0;
-    border-radius: 12px;
-    padding: 20px;
-    margin-bottom: 25px;
-    text-align: center;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.02);
-}
-
-.bismillah {
-    font-size: 18px;
-    color: #0d5c3a;
-    margin-bottom: 10px;
-}
-
-.intro-title {
-    font-size: 18px;
-    color: #0d5c3a;
-    font-weight: bold;
-    margin-bottom: 12px;
-}
-
-.intro-quote {
-    background: #f0fdf4;
-    border-right: 4px solid #0d5c3a;
-    padding: 12px 15px;
-    text-align: right;
-    border-radius: 6px;
-    margin: 15px 0;
-    font-size: 14px;
-    line-height: 2.1;
-    color: #1e293b;
-}
-
-.author-name {
-    display: block;
-    font-weight: bold;
-    color: #0d5c3a;
-    margin-top: 8px;
-    font-size: 13px;
-}
-
-/* Chat Button Floating & Branding */
 .chat-widget-btn {
     position: fixed;
     bottom: 25px;
-    right: 25px; /* Right side par move kar diya */
+    right: 25px;
     width: 65px;
     height: 65px;
     background-color: #0d5c3a;
@@ -404,9 +465,15 @@ body {
     z-index: 1000;
     transition: transform 0.3s ease;
 }
-.chat-widget-btn:active { transform: scale(0.9); }
 
-/* Chat Box Modern Design */
+.chat-widget-btn:active {
+    transform: scale(0.9);
+}
+
+/* ==========================================
+   Chat Box
+   ========================================== */
+
 .chat-box {
     position: fixed;
     bottom: 100px;
@@ -420,11 +487,12 @@ body {
     flex-direction: column;
     z-index: 1000;
     overflow: hidden;
-    transform: translateY(20px) scale(0.9); /* Animation effect */
+    transform: translateY(20px) scale(0.9);
     opacity: 0;
     pointer-events: none;
     transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
+
 .chat-box.active {
     opacity: 1;
     pointer-events: auto;
@@ -439,19 +507,45 @@ body {
     justify-content: space-between;
     align-items: center;
 }
+
 .close-chat {
-    font-size: 28px; /* Bara cross */
+    font-size: 28px;
     cursor: pointer;
     font-weight: bold;
     padding: 0 5px;
 }
 
-.chat-messages { flex: 1; padding: 15px; overflow-y: auto; background: #f4f7f6; }
-.message { padding: 10px 15px; border-radius: 15px; margin-bottom: 10px; max-width: 85%; }
-.bot-message { background: #e2e8f0; align-self: flex-start; }
-.user-message { background: #0d5c3a; color: white; align-self: flex-end; }
+.chat-messages {
+    flex: 1;
+    padding: 15px;
+    overflow-y: auto;
+    background: #f4f7f6;
+    display: flex;
+    flex-direction: column;
+}
 
-/* Input area with right side button */
+.message {
+    padding: 10px 15px;
+    border-radius: 15px;
+    margin-bottom: 10px;
+    max-width: 85%;
+}
+
+.bot-message {
+    background: #e2e8f0;
+    align-self: flex-start;
+}
+
+.user-message {
+    background: #0d5c3a;
+    color: white;
+    align-self: flex-end;
+}
+
+/* ==========================================
+   Chat Input
+   ========================================== */
+
 .chat-input-container {
     padding: 15px;
     display: flex;
@@ -459,13 +553,21 @@ body {
     background: white;
     border-top: 1px solid #ddd;
 }
+
 .chat-input-container input {
     flex: 1;
+    min-width: 0;
     padding: 12px;
     border: 2px solid #ddd;
     border-radius: 25px;
     outline: none;
+    font-family: inherit;
 }
+
+.chat-input-container input:focus {
+    border-color: #0d5c3a;
+}
+
 .chat-input-container button {
     background: #0d5c3a;
     color: white;
@@ -475,55 +577,107 @@ body {
     cursor: pointer;
     font-weight: bold;
     transition: 0.2s;
-}
-.chat-input-container button:active { transform: scale(0.95); }
-
-/* Professional Language Bar Styling */
-.lang-bar {
-    display: flex;
-    gap: 6px;
-    overflow-x: auto;
-    padding: 5px 0;
-    margin-top: 5px;
-    scrollbar-width: none; /* Hide scrollbar for mobile */
-}
-.lang-bar::-webkit-scrollbar {
-    display: none;
-}
-
-.lang-btn {
-    background-color: rgba(255, 255, 255, 0.15);
-    color: #0d5c3a;
-    border: 1px solid #0d5c3a;
-    padding: 4px 10px;
-    border-radius: 15px;
-    font-size: 12px;
-    font-weight: bold;
-    cursor: pointer;
+    font-family: inherit;
     white-space: nowrap;
-    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
-.lang-btn:hover {
-    background-color: #0d5c3a;
-    color: white;
+.chat-input-container button:active {
+    transform: scale(0.95);
 }
 
-.lang-btn.active {
-    background-color: #0d5c3a;
-    color: white;
-    transform: scale(1.08);
-    box-shadow: 0 4px 10px rgba(13, 92, 58, 0.3);
+/* ==========================================
+   Mobile Responsive
+   ========================================== */
+
+@media (max-width: 600px) {
+
+    .navbar {
+        padding: 10px 12px;
+    }
+
+    .menu-icon {
+        right: 15px;
+        top: 16px;
+    }
+
+    .logo {
+        font-size: 18px;
+    }
+
+    .lang-bar {
+        width: calc(100% - 45px);
+        justify-content: flex-start;
+    }
+
+    .lang-btn {
+        font-size: 11px;
+        padding: 4px 9px;
+    }
+
+    .container {
+        width: 100%;
+        max-width: 550px;
+        margin: 12px auto;
+        padding: 0 12px;
+    }
+
+    .intro-card {
+        padding: 15px;
+    }
+
+    .intro-title {
+        font-size: 17px;
+    }
+
+    .intro-quote {
+        font-size: 13px;
+        padding: 10px 12px;
+    }
+
+    .chat-box {
+        width: calc(100% - 30px);
+        height: 70vh;
+        max-height: 500px;
+        right: 15px;
+        bottom: 95px;
+        border-radius: 18px;
+    }
+
+    .chat-widget-btn {
+        right: 18px;
+        bottom: 18px;
+        width: 60px;
+        height: 60px;
+        font-size: 26px;
+    }
 }
 
-.lang-btn:active {
-    transform: scale(0.92);
-}
+/* ==========================================
+   Small Mobile Devices
+   ========================================== */
 
-/* Navbar adjustments for multiple languages bar */
-.navbar {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 12px 15px;
+@media (max-width: 380px) {
+
+    .search-box {
+        gap: 5px;
+    }
+
+    .search-box button {
+        padding: 10px 12px;
+    }
+
+    .card {
+        gap: 8px;
+        padding: 9px;
+    }
+
+    .card-icon {
+        font-size: 18px;
+        padding: 5px 8px;
+    }
+
+    .chat-box {
+        width: calc(100% - 20px);
+        right: 10px;
+    }
 }
