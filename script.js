@@ -1,4 +1,4 @@
-Document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener("DOMContentLoaded", function () {
     // ==========================================
     // 1. Sidebar Toggle Functionality
     // ==========================================
@@ -55,7 +55,7 @@ Document.addEventListener("DOMContentLoaded", function () {
     });
 
     // ==========================================
-    // 3. Search & Filter Functionality
+    // 3. Search & Filter Functionality (Optimized)
     // ==========================================
     const searchInput = document.getElementById("searchInput");
     const searchBtn = document.getElementById("searchBtn");
@@ -72,7 +72,7 @@ Document.addEventListener("DOMContentLoaded", function () {
         cards.forEach(card => {
             const text = card.textContent.toLowerCase();
             if (text.includes(filter)) {
-                card.style.display = "flex";
+                card.style.display = ""; // CSS default layout ko restore karega
                 hasMatches = true;
             } else {
                 card.style.display = "none";
@@ -83,7 +83,7 @@ Document.addEventListener("DOMContentLoaded", function () {
         accordionItems.forEach(item => {
             const text = item.textContent.toLowerCase();
             if (text.includes(filter)) {
-                item.style.display = "block";
+                item.style.display = ""; // CSS default layout ko restore karega
                 hasMatches = true;
             } else {
                 item.style.display = "none";
@@ -96,17 +96,23 @@ Document.addEventListener("DOMContentLoaded", function () {
         }
     }
 
-    if (searchBtn && searchInput) {
-        searchBtn.addEventListener("click", performSearch);
+    if (searchInput) {
+        // Live typing search for better mobile experience
+        searchInput.addEventListener("input", performSearch);
+        
+        if (searchBtn) {
+            searchBtn.addEventListener("click", performSearch);
+        }
+        
         searchInput.addEventListener("keyup", function (e) {
-            if (e.key === "Enter" || searchInput.value === "") {
+            if (e.key === "Enter") {
                 performSearch();
             }
         });
     }
 
     // ==========================================
-    // 4. Multi-Language Translation System (Complete)
+    // 4. Multi-Language Translation System
     // ==========================================
     const langButtons = document.querySelectorAll(".lang-btn");
 
@@ -366,5 +372,4 @@ Document.addEventListener("DOMContentLoaded", function () {
             }
         });
     });
-
-    
+});
