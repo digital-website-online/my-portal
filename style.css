@@ -477,3 +477,53 @@ body {
     transition: 0.2s;
 }
 .chat-input-container button:active { transform: scale(0.95); }
+
+/* Professional Language Bar Styling */
+.lang-bar {
+    display: flex;
+    gap: 6px;
+    overflow-x: auto;
+    padding: 5px 0;
+    margin-top: 5px;
+    scrollbar-width: none; /* Hide scrollbar for mobile */
+}
+.lang-bar::-webkit-scrollbar {
+    display: none;
+}
+
+.lang-btn {
+    background-color: rgba(255, 255, 255, 0.15);
+    color: #0d5c3a;
+    border: 1px solid #0d5c3a;
+    padding: 4px 10px;
+    border-radius: 15px;
+    font-size: 12px;
+    font-weight: bold;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.lang-btn:hover {
+    background-color: #0d5c3a;
+    color: white;
+}
+
+.lang-btn.active {
+    background-color: #0d5c3a;
+    color: white;
+    transform: scale(1.08);
+    box-shadow: 0 4px 10px rgba(13, 92, 58, 0.3);
+}
+
+.lang-btn:active {
+    transform: scale(0.92);
+}
+
+/* Navbar adjustments for multiple languages bar */
+.navbar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 12px 15px;
+}
