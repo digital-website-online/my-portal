@@ -10,140 +10,145 @@
 
     <!-- Header Section -->
     <header class="navbar">
+        <!-- 3 Lines Button (Right Side) -->
+        <div class="menu-icon" id="openMenu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        
         <div class="logo">
             <span class="logo-bold">الاسلام</span>
             <span class="logo-sub">Resource</span>
         </div>
-        <!-- 3 Lines Menu Icon (Right Side Layout) -->
-        <div class="menu-icon" onclick="toggleSidebar()">
-            <span></span>
-            <span></span>
-            <span></span>
-        </div>
     </header>
 
-    <!-- Sidebar (Slide Menu) -->
+    <!-- Sidebar Menu -->
     <div id="sidebar" class="sidebar">
         <div class="sidebar-header">
-            <h3>نیویگیشن</h3>
-            <span class="close-btn" onclick="toggleSidebar()">&times;</span>
+            <h3>نیویگیشن Menu</h3>
+            <span id="closeMenu" class="close-btn">&times;</span>
         </div>
         <ul class="sidebar-links">
-            <li><a href="#departments">اہم شعبہ جات</a></li>
-            <li><a href="#faqs">عام سوالات</a></li>
-            <li><a href="https://www.alislam.org/quran/" target="_blank">القرآن الکریم</a></li>
-            <li><a href="https://www.alislam.org/ruhani-khazain/" target="_blank">روحانیخزائن</a></li>
-            <li><a href="https://www.alislam.org/khilafat/" target="_blank">خلافتِ احمدیہ</a></li>
-            <li><a href="https://www.mta.tv" target="_blank">ایم ٹی اے (MTA Live)</a></li>
-            <li><a href="https://www.alislam.org/library/" target="_blank">کتب خانہ (Library)</a></li>
-            <li><a href="https://www.alislam.org/askmadhur/" target="_blank">سوال و جواب (Q&A)</a></li>
-            <li><a href="https://www.alislam.org/press-release/" target="_blank">پریس ریلیز</a></li>
-            <li><a href="https://www.alislam.org/contactus/" target="_blank">ہم سے رابطہ کریں</a></li>
+            <li><a href="#departments" class="menu-link">اہم شعبہ جات</a></li>
+            <li><a href="#qna" class="menu-link">عام سوالات و جوابات</a></li>
+            <li><a href="https://www.alislam.org/quran/" target="_blank" class="menu-link">القرآن الکریم (تراجم)</a></li>
+            <li><a href="https://www.alislam.org/ruhani-khazain/" target="_blank" class="menu-link">روحانی خزائن</a></li>
+            <li><a href="https://www.alislam.org/khilafat/" target="_blank" class="menu-link">خلافتِ احمدیہ</a></li>
+            <li><a href="https://www.mta.tv" target="_blank" class="menu-link">ایم ٹی اے (MTA Live)</a></li>
+            <li><a href="https://www.alislam.org/library/" target="_blank" class="menu-link">کتب خانہ (Library)</a></li>
+            <li><a href="https://www.alislam.org/askmadhur/" target="_blank" class="menu-link">سوال و جواب (AlIslam Q&A)</a></li>
+            <li><a href="https://www.alislam.org/press-release/" target="_blank" class="menu-link">پریس ریلیز</a></li>
+            <li><a href="https://www.alislam.org/contactus/" target="_blank" class="menu-link">ہم سے رابطہ کریں</a></li>
         </ul>
     </div>
 
-    <!-- Overlay Background for Menu -->
-    <div id="overlay" class="overlay" onclick="toggleSidebar()"></div>
+    <!-- Overlay Background -->
+    <div id="overlay" class="overlay"></div>
 
-    <!-- Main Content Container -->
+    <!-- Main Container -->
     <main class="container">
 
-        <!-- 1. Main Departments Section -->
+        <!-- Search Bar Section -->
+        <div class="search-box">
+            <input type="text" id="searchInput" placeholder="تلاش کریں (مثلاً: خلافت, نماز, کتب)...">
+            <button id="searchBtn">تلاش</button>
+        </div>
+
+        <!-- 1. Departments Section -->
         <section id="departments" class="section-title">
             <h2>اہم شعبہ جات</h2>
             <p>آن لائن دینی و علمی مواد (براہِ راست روابط)</p>
         </section>
 
         <div class="cards-grid">
-            <!-- Card 1 -->
-            <div class="card">
+            <a href="https://www.alislam.org/quran/" target="_blank" class="card">
                 <div class="card-icon">📖</div>
                 <div class="card-content">
                     <h3>القرآن الکریم</h3>
                     <p>عربی متن، اردو ترجمہ اور تفصیلی تفاسیر۔</p>
                 </div>
-            </div>
+            </a>
 
-            <!-- Card 2 -->
-            <div class="card">
+            <a href="https://www.alislam.org/ruhani-khazain/" target="_blank" class="card">
                 <div class="card-icon">📚</div>
                 <div class="card-content">
                     <h3>روحانی خزائن</h3>
                     <p>حضرت مسیح موعود علیہ السلام کی تمام تصانیف۔</p>
                 </div>
-            </div>
+            </a>
 
-            <!-- Card 3 -->
-            <div class="card">
+            <a href="https://www.alislam.org/khilafat/" target="_blank" class="card">
                 <div class="card-icon">🕌</div>
                 <div class="card-content">
                     <h3>خلافتِ احمدیہ</h3>
                     <p>خلفائے احمدیت کے خطبات اور ہدایات۔</p>
                 </div>
-            </div>
+            </a>
 
-            <!-- Card 4 (Naya Add Kiya) -->
-            <div class="card">
+            <a href="https://www.mta.tv" target="_blank" class="card">
                 <div class="card-icon">📺</div>
                 <div class="card-content">
                     <h3>ایم ٹی اے انٹرنیشنل</h3>
                     <p>براہِ راست نشریات اور اسلامی پروگرامز۔</p>
                 </div>
-            </div>
+            </a>
 
-            <!-- Card 5 (Naya Add Kiya) -->
-            <div class="card">
+            <a href="https://www.alislam.org/library/" target="_blank" class="card">
                 <div class="card-icon">❓</div>
                 <div class="card-content">
                     <h3>سوال و جواب</h3>
                     <p>عام مذہبی اور عقائدی سوالات کے جوابات۔</p>
                 </div>
-            </div>
+            </a>
 
-            <!-- Card 6 (Naya Add Kiya) -->
-            <div class="card">
+            <a href="https://www.alislam.org/press-release/" target="_blank" class="card">
                 <div class="card-icon">📰</div>
                 <div class="card-content">
                     <h3>اخبارات و رسائل</h3>
                     <p>الفضل، الموعود اور جماعت کے دیگر رسائل۔</p>
                 </div>
-            </div>
+            </a>
         </div>
 
-        <!-- 2. Frequently Asked Questions Section (AlIslam Q&A) -->
-        <section id="faqs" class="section-title" style="margin-top: 40px;">
+        <!-- 2. Q&A Section -->
+        <section id="qna" class="section-title" style="margin-top: 35px;">
             <h2>عام سوالات و جوابات</h2>
             <p>جماعت احمدیہ کے حوالے سے اہم معلومات</p>
         </section>
 
-        <div class="faq-container">
-            <details class="faq-item">
-                <summary>جماعت احمدیہ کی بنیاد کب اور کس نے رکھی؟</summary>
-                <div class="faq-answer">
+        <div id="noResults" class="no-results" style="display: none;">
+            کوئی نتیجہ نہیں ملا۔ برائے مہربانی مختلف الفاظ سے تلاش کریں۔
+        </div>
+
+        <div class="accordion-container">
+            <div class="accordion-item">
+                <div class="accordion-header">جماعت احمدیہ کی بنیاد کب اور کس نے رکھی؟</div>
+                <div class="accordion-content">
                     <p>جماعت احمدیہ کی بنیاد حضرت میرزا غلام احمد قادیانی علیہ الصلوٰۃ والسلام (مسیح موعود و مہدی موعود) نے 23 مارچ 1889ء کو قادیان، ہند میں رکھی۔</p>
                 </div>
-            </details>
+            </div>
 
-            <details class="faq-item">
-                <summary>خلافتِ احمدیہ کا موجودہ مقام کیا ہے؟</summary>
-                <div class="faq-answer">
+            <div class="accordion-item">
+                <div class="accordion-header">خلافتِ احمدیہ کا موجودہ مقام کیا ہے؟</div>
+                <div class="accordion-content">
                     <p>اس وقت جماعت احمدیہ کے عالمگیر سربراہ حضرت میرزا مسرور احمد خلیفتہ المسیح الخامس ایدہ اللہ تعالیٰ بنصرہ العزیز ہیں۔</p>
                 </div>
-            </details>
+            </div>
 
-            <details class="faq-item">
-                <summary>جماعت احمدیہ کا بنیادی مقصد کیا ہے؟</summary>
-                <div class="faq-answer">
+            <div class="accordion-item">
+                <div class="accordion-header">جماعت احمدیہ کا بنیادی مقصد کیا ہے؟</div>
+                <div class="accordion-content">
                     <p>جماعت کا مقصد اسلام کی حقیقی، امن پسند اور پرخلوص تعلیمات کو دنیا بھر میں پھیلانا اور انسان کو اس کے خالق کے قریب کرنا ہے۔</p>
                 </div>
-            </details>
+            </div>
 
-            <details class="faq-item">
-                <summary>الاسلام ویب سائٹ (AlIslam.org) کیا پیش کرتی ہے؟</summary>
-                <div class="faq-answer">
+            <div class="accordion-item">
+                <div class="accordion-header">الاسلام ویب سائٹ (AlIslam.org) کیا پیش کرتی ہے؟</div>
+                <div class="accordion-content">
                     <p>الاسلام ویب سائٹ پر قرآن کریم کے مختلف زبانوں میں تراجم، کتب روحانی خزائن، خطباتِ جمعہ، اور دینی مضامین کا وسیع ذخیرہ موجود ہے۔</p>
                 </div>
-            </details>
+            </div>
         </div>
 
     </main>
