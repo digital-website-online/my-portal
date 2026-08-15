@@ -865,4 +865,456 @@ document.addEventListener("DOMContentLoaded", function () {
 
     applyLanguage("ur");
 
+
+    /* ==========================================
+       8. EXTRA WEBSITE UPGRADES
+       These additions keep the existing system intact.
+       ========================================== */
+
+    /* ---------- Remember selected language ---------- */
+
+    try {
+        const savedLanguage = localStorage.getItem("preferredLanguage");
+
+        if (savedLanguage && translations[savedLanguage]) {
+            applyLanguage(savedLanguage);
+        }
+
+        langButtons.forEach(function (button) {
+            button.addEventListener("click", function () {
+                const selectedLanguage = this.getAttribute("data-lang");
+
+                if (selectedLanguage && translations[selectedLanguage]) {
+                    localStorage.setItem("preferredLanguage", selectedLanguage);
+                }
+            });
+        });
+    } catch (error) {
+        console.warn("Language preference could not be saved.");
+    }
+
+
+    /* ---------- Better sidebar accessibility ---------- */
+
+    function updateSidebarState(isOpen) {
+        if (sidebar) {
+            sidebar.setAttribute("aria-hidden", isOpen ? "false" : "true");
+        }
+
+        if (overlay) {
+            overlay.setAttribute("aria-hidden", isOpen ? "false" : "true");
+        }
+
+        if (openMenu) {
+            openMenu.setAttribute("aria-expanded", isOpen ? "true" : "false");
+        }
+
+        document.body.style.overflow = isOpen ? "hidden" : "";
+    }
+
+    if (openMenu && sidebar && overlay) {
+        openMenu.addEventListener("click", function () {
+            updateSidebarState(true);
+        });
+
+        if (closeMenu) {
+            closeMenu.addEventListener("click", function () {
+                updateSidebarState(false);
+            });
+        }
+
+        overlay.addEventListener("click", function () {
+            updateSidebarState(false);
+        });
+
+        document.querySelectorAll(".menu-link").forEach(function (link) {
+            link.addEventListener("click", function () {
+                updateSidebarState(false);
+            });
+        });
+    }
+
+
+    /* ---------- Escape closes sidebar ---------- */
+
+    document.addEventListener("keydown", function (event) {
+        if (event.key === "Escape") {
+            const sidebarIsOpen =
+                sidebar && sidebar.classList.contains("active");
+
+            if (sidebarIsOpen) {
+                closeSidebar();
+                updateSidebarState(false);
+
+                if (openMenu) {
+                    openMenu.focus();
+                }
+            }
+        }
+    });
+
+
+    /* ---------- Scroll-to-top button ---------- */
+
+    let scrollTopBtn = document.getElementById("scrollTopBtn");
+
+    if (!scrollTopBtn) {
+        scrollTopBtn = document.createElement("button");
+        scrollTopBtn.id = "scrollTopBtn";
+        scrollTopBtn.type = "button";
+        scrollTopBtn.setAttribute("aria-label", "Back to top");
+        scrollTopBtn.textContent = "↑";
+        document.body.appendChild(scrollTopBtn);
+    }
+
+    function updateScrollTopButton() {
+        if (!scrollTopBtn) return;
+
+        if (window.scrollY > 450) {
+            scrollTopBtn.classList.add("show");
+        } else {
+            scrollTopBtn.classList.remove("show");
+        }
+    }
+
+    window.addEventListener("scroll", updateScrollTopButton, {
+        passive: true
+    });
+
+    scrollTopBtn.addEventListener("click", function () {
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+        });
+    });
+
+    updateScrollTopButton();
+
+
+    /* ---------- Active section tracking ---------- */
+
+    const trackedSections = document.querySelectorAll(
+        "#departments, #qna"
+    );
+
+    const sectionLinks = document.querySelectorAll(
+        '.menu-link[href^="#"]'
+    );
+
+    if ("IntersectionObserver" in window && trackedSections.length) {
+
+        const sectionObserver = new IntersectionObserver(
+            function (entries) {
+
+                entries.forEach(function (entry) {
+
+                    if (!entry.isIntersecting) return;
+
+                    sectionLinks.forEach(function (link) {
+                        link.classList.remove("current-section");
+                    });
+
+                    sectionLinks.forEach(function (link) {
+
+                        const target = link.getAttribute("href");
+
+                        if (target === "#" + entry.target.id) {
+                            link.classList.add("current-section");
+                        }
+                    });
+
+                });
+
+            },
+            {
+                rootMargin: "-25% 0px -60% 0px",
+                threshold: 0
+            }
+        );
+
+        trackedSections.forEach(function (section) {
+            sectionObserver.observe(section);
+        });
+    }
+
+
+    /* ---------- Search keyboard shortcut ---------- */
+
+    document.addEventListener("keydown", function (event) {
+
+        const tagName =
+            document.activeElement &&
+            document.activeElement.tagName
+                ? document.activeElement.tagName.toLowerCase()
+                : "";
+
+        const typingInField =
+            tagName === "input" ||
+            tagName === "textarea" ||
+            tagName === "select";
+
+        if (
+            event.key === "/" &&
+            !typingInField &&
+            searchInput
+        ) {
+            event.preventDefault();
+            searchInput.focus();
+            searchInput.select();
+        }
+
+        if (
+            event.key === "Escape" &&
+            document.activeElement === searchInput
+        ) {
+            searchInput.value = "";
+            performSearch();
+            searchInput.blur();
+        }
+    });
+
+
+    /* ---------- Search result counter ---------- */
+
+    let searchResultCounter =
+        document.getElementById("searchResultCounter");
+
+    if (!searchResultCounter && searchInput) {
+
+        searchResultCounter = document.createElement("div");
+        searchResultCounter.id = "searchResultCounter";
+
+        searchResultCounter.setAttribute(
+            "aria-live",
+            "polite"
+        );
+
+        searchInput.parentElement.insertAdjacentElement(
+            "afterend",
+            searchResultCounter
+        );
+    }
+
+    function updateSearchCounter() {
+
+        if (!searchResultCounter || !searchInput) return;
+
+        const query =
+            searchInput.value.toLowerCase().trim();
+
+        if (!query) {
+            searchResultCounter.textContent = "";
+            return;
+        }
+
+        const visibleCards =
+            Array.from(
+                document.querySelectorAll(".card")
+            ).filter(function (card) {
+                return card.style.display !== "none";
+            }).length;
+
+        const visibleQuestions =
+            Array.from(
+                document.querySelectorAll(".accordion-item")
+            ).filter(function (item) {
+                return item.style.display !== "none";
+            }).length;
+
+        const total =
+            visibleCards + visibleQuestions;
+
+        searchResultCounter.textContent =
+            total + " results found";
+    }
+
+    if (searchInput) {
+
+        searchInput.addEventListener(
+            "input",
+            updateSearchCounter
+        );
+
+        searchInput.addEventListener(
+            "keyup",
+            updateSearchCounter
+        );
+    }
+
+
+    /* ---------- Improve accordion accessibility ---------- */
+
+    accordionHeaders.forEach(function (header, index) {
+
+        if (!header.id) {
+            header.id = "question-header-" + (index + 1);
+        }
+
+        const content =
+            header.parentElement &&
+            header.parentElement.querySelector(
+                ".accordion-content"
+            );
+
+        if (!content) return;
+
+        if (!content.id) {
+            content.id = "question-content-" + (index + 1);
+        }
+
+        header.setAttribute(
+            "aria-controls",
+            content.id
+        );
+
+        content.setAttribute(
+            "role",
+            "region"
+        );
+
+        content.setAttribute(
+            "aria-labelledby",
+            header.id
+        );
+
+        header.addEventListener("click", function () {
+            const isOpen =
+                this.parentElement.classList.contains("active");
+
+            this.setAttribute(
+                "aria-expanded",
+                isOpen ? "true" : "false"
+            );
+
+            document.querySelectorAll(
+                ".accordion-header"
+            ).forEach(function (otherHeader) {
+
+                if (otherHeader !== header) {
+                    otherHeader.setAttribute(
+                        "aria-expanded",
+                        "false"
+                    );
+                }
+
+            });
+        });
+
+    });
+
+
+    /* ---------- Keyboard navigation for language buttons ---------- */
+
+    langButtons.forEach(function (button, index) {
+
+        button.addEventListener("keydown", function (event) {
+
+            let nextIndex = null;
+
+            if (event.key === "ArrowRight") {
+                nextIndex =
+                    (index + 1) % langButtons.length;
+            }
+
+            if (event.key === "ArrowLeft") {
+                nextIndex =
+                    (index - 1 + langButtons.length) %
+                    langButtons.length;
+            }
+
+            if (nextIndex !== null) {
+                event.preventDefault();
+                langButtons[nextIndex].focus();
+            }
+
+        });
+
+    });
+
+
+    /* ---------- Prevent accidental double submit ---------- */
+
+    if (searchBtn) {
+
+        searchBtn.addEventListener("dblclick", function (event) {
+            event.preventDefault();
+        });
+
+    }
+
+
+    /* ---------- Smooth internal navigation ---------- */
+
+    document.querySelectorAll(
+        'a[href^="#"]'
+    ).forEach(function (link) {
+
+        link.addEventListener("click", function (event) {
+
+            const targetId =
+                this.getAttribute("href");
+
+            if (
+                !targetId ||
+                targetId === "#" ||
+                targetId === "#top"
+            ) {
+                if (targetId === "#top") {
+                    event.preventDefault();
+
+                    window.scrollTo({
+                        top: 0,
+                        behavior: "smooth"
+                    });
+                }
+
+                return;
+            }
+
+            const target =
+                document.querySelector(targetId);
+
+            if (!target) return;
+
+            event.preventDefault();
+
+            target.scrollIntoView({
+                behavior: "smooth",
+                block: "start"
+            });
+
+        });
+
+    });
+
+
+    /* ---------- Keep search results clean after language change ---------- */
+
+    langButtons.forEach(function (button) {
+
+        button.addEventListener("click", function () {
+
+            setTimeout(function () {
+
+                if (searchInput && searchInput.value.trim()) {
+                    performSearch();
+                    updateSearchCounter();
+                }
+
+            }, 50);
+
+        });
+
+    });
+
+
+    /* ---------- Page loaded state ---------- */
+
+    document.documentElement.classList.add("js-ready");
+
+    window.dispatchEvent(
+        new CustomEvent("portalReady")
+    );
+
+
 });
